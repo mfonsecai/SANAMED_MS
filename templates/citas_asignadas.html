@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='saludmental1.ico ') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style18.css') }}">
+    <title>Citas Asignadas - Sanamed</title>
+</head>
+    <div class="container">
+        <h1>Mis Citas Asignadas</h1>
+        <div class="appointment-form">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre Paciente</th>
+                        <th>Número Documento</th>
+                        <th>Correo Paciente</th>
+                        <th>Fecha Consulta</th>
+                        <th>Hora Consulta</th>
+                        <th>Motivo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cita in citas %}
+                    <tr>
+                        <td>{{ cita[1] }}</td>
+                        <td>{{ cita[2] }}</td>
+                        <td>{{ cita[3] }}</td>
+                        <td>{{ cita[4] }}</td>
+                        <td>{{ cita[5] }}</td>
+                        <td>{{ cita[6] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    <div class="container-1">
+        <div class="config">
+            <a href="#" title="Ajustes"><img src="static/556-5567171_gear-setting-icon-clipart 1.png" alt="Ajustes"></a>
+        </div>
+        <div class="casa">
+            <a href="{{ url_for('profesional_home') }}" title="Inicio"><img src="static/25694 1.png" alt="Inicio"></a>
+        </div>
+        <div class="download-20">
+            <a href="{{ url_for('index') }}" title="Cerrar Sesión"><img src="static/iconmonstr-log-out-17-240.png" alt="Cerrar Sesión"></a>
+        </div>
+    </div>
+</body>
+</html>

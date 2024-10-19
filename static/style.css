@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap');
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    max-width: 450px; /* Ajustado para pantallas más grandes */
+    margin: 80px auto; /* Centrar contenedor */
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para darle un mejor diseño */
+    text-align: center;
+}
+
+h1, h2 {
+    color: #8DCB9E;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 46px;
+    margin-bottom: 20px;
+}
+
+.form-group .label {
+    margin-bottom: 20px;
+    text-align: left;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #8DCB9E;
+    background-color: #8DCB9E;
+}
+input[type="text"],
+input[type="password"],
+button,
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+button {
+    background-color: #8DCB9E;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: green;
+}
+
+.forgot-password {
+    margin-top: 10px;
+}
+
+.forgot-password a {
+    color: green;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.register-link {
+    margin-top: 30px;
+}
+
+.register-link a {
+    color: green;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.alert {
+    background-color: #8DCB9E;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.closebtn {
+    color: white;
+    float: right;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+/* Responsive Design */
+@media (min-width: 1200px) {
+    .login-container {
+        max-width: 500px;
+        padding: 50px;
+    }
+}

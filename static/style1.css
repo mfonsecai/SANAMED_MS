@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap');
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 450px; /* Ajuste para pantallas más grandes */
+    margin: 80px auto; /* Centrando contenedor */
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Añadir sombra */
+    text-align: center;
+    color: #8DCB9E;
+}
+
+h2 {
+    text-align: center;
+    color: #8DCB9E;
+    font-size: 46px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #000;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+select option[disabled] {
+    color: #000000;
+}
+
+input::placeholder,
+select::placeholder {
+    color: #000;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #8DCB9E;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: green;
+}
+
+.register-link {
+    margin-top: 20px;
+    color: #8DCB9E;
+}
+
+.register-link a {
+    color: green;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.alert {
+    background-color: #8DCB9E;
+    color: white;
+    padding: 13px;
+    border-radius: 4px;
+    position: relative;
+    margin: 20px 0;
+}
+
+.closebtn {
+    color: white;
+    float: right;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+/* Ajuste para pantallas grandes */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 500px;
+        padding: 50px;
+    }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rompecabezas</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='saludmental1.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style5.css') }}">
+</head>
+<body>
+    <div id="main-container">
+        <h1>Rompecabezas</h1>
+        <div id="puzzle_container">
+            <div class="puzzle_block">1</div>
+            <div class="puzzle_block">2</div>
+            <div class="puzzle_block">3</div>
+            <div class="puzzle_block">4</div>
+            <div class="puzzle_block">5</div>
+            <div class="puzzle_block">6</div>
+            <div class="puzzle_block">7</div>
+            <div class="puzzle_block">8</div>
+        </div>
+        <div id="difficulty_container">
+            <div class="difficulty_button active">EASY</div>
+            <div class="difficulty_button">MEDIUM</div>
+            <div class="difficulty_button">HARD</div>
+        </div>
+        <div id="message_container" style="display: none;">
+            <div id="message">¡Rompecabezas resuelto!</div>
+            <button id="play_again_button">Volver a Jugar</button>
+        </div>
+        
+        <div class="container-1">
+            <div class="config">
+                <a href="#" title="Ajustes"><img src="static/556-5567171_gear-setting-icon-clipart 1.png" alt="Ajustes"></a>
+            </div>
+            <div class="casa">
+                <a href="{{ url_for('user_home') }}" title="Inicio"><img src="static/25694 1.png" alt="Inicio"></a>
+            </div>
+            <div class="download-20">
+                <a href="{{ url_for('index') }}" title="Cerrar Sesión"><img src="static/iconmonstr-log-out-17-240.png" alt="Cerrar Sesión"></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/puzzle.js') }}"></script>
+    <script src="static/puzzle.js"></script>
+</body>
+</html>

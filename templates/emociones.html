@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='saludmental1.ico ') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style9.css') }}">
+    <title>Emociones del día</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="emociones" title="Emociones del día {{ fecha_seleccionada }}">Emociones del día {{ fecha_seleccionada }}</h1>
+        <div class="appointment-form" title="Formulario de citas">
+            {% if mensaje %}
+                <p>{{ mensaje }}</p>
+            {% else %}
+                <table class="emotion-table">
+                    <thead>
+                        <tr>
+                            <th class="emotion-title" title="Tipo de emoción">Emoción</th>
+                            <th class="hour-title" title="Hora de registro">Hora</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for emocion, hora in emociones_horas %}
+                            <tr class="emotion-row">
+                                <td>{{ emocion }}</td>
+                                <td>{{ hora }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+        </div>
+
+        <div class="container-1">
+            <div class="gear-setting-icon-clipart-1" title="Ajustes">
+            </div>
+            <div class="config">
+                <a href=""><img src="static/556-5567171_gear-setting-icon-clipart 1.png" alt="" title="Ajustes"></a>
+            </div>
+            <div class="download-20" title="Cerrar Sesión">
+                <a href="{{ url_for('index') }}"><img src="static/iconmonstr-log-out-17-240.png" alt="Icono de Cerrar Sesión"></a>
+            </div>
+            <div class="casa" title="Inicio">
+                <a href="{{ url_for('user_home') }}"><img src="static/25694 1.png" alt="Icono de Inicio"></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

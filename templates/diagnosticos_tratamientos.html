@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnósticos y Tratamientos</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='saludmental1.ico ') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style19.css') }}">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Diagnósticos y Tratamientos</h1>
+        {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="flash-messages">
+                        {% for message in messages %}
+                            <div class="flash-message">{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+        <div class="appointment-form">
+
+            
+
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>ID Consulta</th>
+                        <th>Número de Documento</th>
+                        <th>Fecha Consulta</th>
+                        <th>Hora Consulta</th>
+                        <th>Motivo</th>
+                        <th>Diagnóstico</th>
+                        <th>Tratamiento</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for consulta in consultas %}
+                    <tr>
+                        <td>{{ consulta.id_consulta }}</td>
+                        <td>{{ consulta.numero_documento }}</td>
+                        <td>{{ consulta.fecha_consulta }}</td>
+                        <td>{{ consulta.hora_consulta }}</td>
+                        <td>{{ consulta.motivo }}</td>
+                        <td>
+                            <form action="{{ url_for('editar_diagnostico_tratamiento', id_consulta=consulta.id_consulta) }}" method="post">
+                                <input type="text" name="diagnostico" value="{{ consulta.diagnostico }}" class="styled-input">
+                        </td>
+                        <td>
+                                <input type="text" name="tratamiento" value="{{ consulta.tratamiento }}" class="styled-input">
+                        </td>
+                        <td>
+                                <button type="submit" class="styled-button">Actualizar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    <div class="container-1">
+        <div class="config">
+            <a href="#" title="Ajustes"><img src="static/556-5567171_gear-setting-icon-clipart 1.png" alt="Ajustes"></a>
+        </div>
+        <div class="casa">
+            <a href="{{ url_for('profesional_home') }}" title="Inicio"><img src="static/25694 1.png" alt="Inicio"></a>
+        </div>
+        <div class="download-20">
+            <a href="{{ url_for('index') }}" title="Cerrar Sesión"><img src="static/iconmonstr-log-out-17-240.png" alt="Cerrar Sesión"></a>
+        </div>
+    </div>
+</body>
+</html>

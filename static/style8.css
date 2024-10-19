@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+.container {
+    width: 400px;
+    margin: 100px auto;
+    height: 790px;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 5px;
+    text-align: center;
+    font-family: "Releway", sans-serif;
+    color: #8DCB9E;
+    font-size: 25px;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.appointment-form {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    height: 440px;
+}
+
+.form-label {
+    margin-top: -10px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.form-date {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-submit {
+    display: inline-block;
+    width: 80%;
+    padding: 15px;
+    background-color: #8DCB9E;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 22px;
+    cursor: pointer;
+    margin: 15px 0;
+    transition: background-color 0.3s ease;
+}
+
+.form-submit:hover {
+    background-color: darkgreen;
+}
+
+.container-1 {
+    display: flex;
+    justify-content: center;
+    gap: 100px; /* Ajusta la separación entre iconos según sea necesario */
+    margin-top: -1px;
+}
+
+.config, .casa, .download-20 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.config img, .casa img, .download-20 img {
+    width: 45px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-top: 120px;
+}
+
+.config img:hover, .casa img:hover, .download-20 img:hover {
+    transform: scale(1.1);
+}
+
+
+.container-111 {
+    margin: 50px 0 20px;
+    font-size: 28px;
+}
+
+.emociones, .consultas {
+    margin: 20px 0;
+}
+
+
+
+.alert {
+    background-color: #8DCB9E;
+    color: white;
+    padding: 5px 3px;
+    font-size: 20px;
+    border: 10px solid #8DCB9E;
+    border-radius: 4px;
+    max-width: 90%;
+    position: relative;
+    margin: -30px auto;
+    margin-top: -10px;
+}
+
+.closebtn {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: -10px;
+}
+
+@media (max-width: 480px) {
+    body {
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden; /* Previene el desplazamiento */
+    } }

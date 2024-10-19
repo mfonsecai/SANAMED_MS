@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style12.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='saludmental1.ico ') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Sanamed - Software de Salud Mental</title>
+</head>
+<body style="font-family: 'Raleway', sans-serif;">
+    <div class="settings-v-1">
+        <div class="container-8">
+            <div class="salud-mental-1" title="Imagen ilustrativa sobre salud mental"></div>
+            <div class="frame-6">
+                <span class="sanamed" title="SANAMED: Sanamed es un software de salud mental que ofrece una variedad de servicios y herramientas para mejorar el bienestar emocional y la salud mental de los usuarios.">SANAMED</span>
+            </div>
+        </div>
+        
+        <div class="imagen14">
+            <img src="static/image 13.png" alt="Imagen 9" title="Administrador">
+        </div>
+        
+        <div class="frame-13-container">
+            <div class="frame-13">
+                <div class="login-button">
+                    <span class="label" title="Pacientes">
+                        <a href="/pacientes">Pacientes</a>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="frame-13">
+                <div class="login-button">
+                    <span class="label" title="Citas asignadas">
+                        <a href="/citas_asignadas">Citas asignadas</a>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="frame-13">
+                <div class="login-button">
+                    <span class="label" title="Diagnósticos">
+                        <a href="/diagnosticos_tratamientos">Diagnósticos y tratamiento</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container-1">
+            <div class="config">
+                <a href="{{ url_for('configuracion') }}" title="Ajustes"><img src="static/556-5567171_gear-setting-icon-clipart 1.png" alt="Ajustes"></a>
+            </div>
+            <div class="casa">
+                <a href="{{ url_for('profesional_home') }}" title="Inicio"><img src="static/25694 1.png" alt="Inicio"></a>
+            </div>
+            <div class="download-20">
+                <a href="{{ url_for('index') }}" title="Cerrar Sesión"><img src="static/iconmonstr-log-out-17-240.png" alt="Cerrar Sesión"></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

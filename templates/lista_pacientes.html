@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacientes - Sanamed</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='saludmental1.ico ') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style17.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Mis Pacientes</h1>
+        <div class="appointment-form">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Número de Documento</th>
+                        <th>Celular</th>
+                        <th>Correo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for paciente in pacientes %}
+                    <tr>
+                        <td>{{ paciente[0] }}</td>
+                        <td>{{ paciente[1] }}</td>
+                        <td>{{ paciente[2] }}</td>
+                        <td>{{ paciente[3] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    <div class="container-1">
+        <div class="config">
+            <a href="#" title="Ajustes"><img src="static/556-5567171_gear-setting-icon-clipart 1.png" alt="Ajustes"></a>
+        </div>
+        <div class="casa">
+            <a href="{{ url_for('profesional_home') }}" title="Inicio"><img src="static/25694 1.png" alt="Inicio"></a>
+        </div>
+        <div class="download-20">
+            <a href="{{ url_for('index') }}" title="Cerrar Sesión"><img src="static/iconmonstr-log-out-17-240.png" alt="Cerrar Sesión"></a>
+        </div>
+    </div>
+</body>
+</html>

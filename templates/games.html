@@ -1,0 +1,33 @@
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style4.css') }}">
+    <title>Juegos</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='saludmental1.ico ') }}">
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <h2 title="Seleccione un juego para jugar">¿Qué desea jugar?</h2>
+        <div class=' img '>
+            <img src="static/image 10 (1).png" alt="Imagen del juego" title="Imagen de actividades y juegos">
+        </div>
+        <!-- Botones Bootstrap -->
+        <a href="{{ url_for('rompecabezas') }}" class="btn btn-primary btn-lg btn-block" title="Jugar Rompecabezas">Rompecabezas</a>
+        <a href="{{ url_for('laberinto') }}" class="btn btn-success btn-lg btn-block" title="Jugar Laberinto">Laberinto</a>
+        <div class="container-1">
+            <div class="config">
+                <a href="#" title="Ajustes"><img src="static/556-5567171_gear-setting-icon-clipart 1.png" alt="Ajustes"></a>
+            </div>
+            <div class="casa">
+                <a href="{{ url_for('user_home') }}" title="Inicio"><img src="static/25694 1.png" alt="Inicio"></a>
+            </div>
+            <div class="download-20">
+                <a href="{{ url_for('index') }}" title="Cerrar Sesión"><img src="static/iconmonstr-log-out-17-240.png" alt="Cerrar Sesión"></a>
+            </div>
+        </div>
+        </div>
+
+    <!-- Agregar Bootstrap JS (opcional, solo si necesitas funcionalidades como modales) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

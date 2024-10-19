@@ -1,0 +1,128 @@
+/* Cambia la fuente de todo el documento a Raleway */
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #dad7d7;
+}
+
+.settings-v-1 {
+    width: 400px;
+    margin: 100px auto;
+    height: 820px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    font-family: "Releway", sans-serif;
+}
+
+.frame-6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 100px;
+}
+
+.settings-v-1 .sanamed {
+    overflow-wrap: break-word;
+    font-weight: 700;
+    font-size: 32px;
+    color: #000000;
+    justify-content: center;
+}
+
+.frame-13-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.settings-v-1 .login-button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.settings-v-1 .login-button a {
+    border-radius: 8px;
+    margin: 2px 0;
+    display: flex;
+    padding: 30px 30px;
+    width: 250px;
+    height: fit-content;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    background-color: #8DCB9E;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.settings-v-1 .login-button a:hover {
+    background-color: green;
+}
+
+.settings-v-1 .label {
+    text-align: center;
+    overflow-wrap: break-word;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.125;
+    color: #000;
+}
+
+.settings-v-1 .container-8 {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    background: #8DCB9E;
+    position: relative;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15.1px 13.4px 14.2px 13.8px;
+    height: 61px;
+    width: 98%;
+    box-sizing: border-box;
+}
+
+.settings-v-1 .imagen14 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.container-1 {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.config, .casa, .download-20 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -240px;
+}
+
+.config img, .casa img, .download-20 img {
+    width: 45px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.config img:hover, .casa img:hover, .download-20 img:hover {
+    transform: scale(1.1);
+}
+
+.container-1 a img {
+    margin-top: 160px; /* Ajusta este valor según lo necesites */
+}

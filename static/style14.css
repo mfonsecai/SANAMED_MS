@@ -1,0 +1,123 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #dad7d7;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 340px;
+    margin: 100px auto;
+    height: 760px;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 5px;
+    text-align: center;
+    font-family: "Releway", sans-serif;
+    color: #000000;
+    font-size: 20px;
+    position: relative;
+}
+h1 {
+    color: #8DCB9E;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.appointment-form {
+    max-width: 500px;
+    margin: auto;
+    height: 420px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    display: block;
+    margin-top: 10px;
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #000000;
+    box-sizing: border-box;
+}
+
+button {
+    display: block;
+    width: calc(100% - 20px);
+    padding: 20px;
+    background-color: #8DCB9E;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 80px;
+}
+
+button:hover {
+    background-color: green;
+}
+
+.alert {
+    background-color: #8DCB9E;
+    color: white;
+    padding: 13px;
+    border: 1px solid #8DCB9E;
+    border-radius: 4px;
+    max-width: 95%;
+    width: 400px;
+    position: relative;
+    margin: 10px auto;
+    font-size: 17px;
+}
+
+.closebtn {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.closebtn:hover {
+    color: black;
+}
+.container-1 {
+    display: flex;
+    justify-content: center;
+    gap: 100px; /* Ajusta la separación entre iconos según sea necesario */
+    margin-top: -1px;
+}
+
+.config, .casa, .download-20 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.config img, .casa img, .download-20 img {
+    width: 45px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-top: 60px;
+}
+
+.config img:hover, .casa img:hover, .download-20 img:hover {
+    transform: scale(1.1);
+}

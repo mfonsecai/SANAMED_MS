@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='saludmental1.ico ') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style10.css') }}">
+    <title>Consultas del día {{ fecha_seleccionada }}</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="titulo-principal" title="Consultas del día {{ fecha_seleccionada }}">Consultas del día {{ fecha_seleccionada }}</h1>
+        <div class="appointment-form">
+            <div class="consultas" title="Lista de consultas">
+                {% if consultas %}
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="blue-title" title="Fecha">Fecha</th>
+                                <th class="green-title" title="Hora">Hora</th>
+                                <th class="red-title" title="Nombre Profesional">Nombre Profesional</th>
+                                <th class="purple-title" title="Especialidad">Especialidad</th>
+                                <th class="orange-title" title="Motivo">Motivo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for consulta in consultas %}
+                                <tr class="result-row">
+                                    <td>{{ consulta[2] }}</td> <!-- Fecha -->
+                                    <td>{{ consulta[3] }}</td> <!-- Hora -->
+                                    <td>{{ obtener_nombre_profesional(consulta[1]) }}</td> <!-- Nombre del Profesional -->
+                                    <td>{{ obtener_especialidad_profesional(consulta[1]) }}</td> <!-- Especialidad del Profesional -->
+                                    <td>{{ consulta[4] }}</td> <!-- Motivo -->
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p>{{ mensaje }}</p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="container-1">
+            <div class="config">
+                <a href="#" title="Ajustes"><img src="static/556-5567171_gear-setting-icon-clipart 1.png" alt="Ajustes"></a>
+            </div>
+            <div class="casa">
+                <a href="{{ url_for('user_home') }}" title="Inicio"><img src="static/25694 1.png" alt="Inicio"></a>
+            </div>
+            <div class="download-20">
+                <a href="{{ url_for('index') }}" title="Cerrar Sesión"><img src="static/iconmonstr-log-out-17-240.png" alt="Cerrar Sesión"></a>
+            </div>
+        </div>
+    </body>
+</body>
+</html>

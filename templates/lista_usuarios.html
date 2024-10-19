@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='saludmental1.ico ') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style15.css') }}">
+    <title>Lista de Usuarios</title>
+    <style>
+        .confirmation-dialog {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+        }
+        .flash-message {
+            color: green;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Usuarios</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="flash-message {{ category }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        <div class="appointment-form">
+            
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Acciones</th>
+                </tr>
+                {% for usuario in usuarios %}
+                <tr>
+                    <td>{{ usuario[0] }}</td>
+                    <td>{{ usuario[1] }}</td>
+                    <td>
+                        <form id="eliminarForm{{ usuario[0] }}" action="{{ url_for('eliminar_usuario', id=usuario[0]) }}" method="post">
+                            <button type="button" onclick="showConfirmationDialog('{{ usuario[0] }}')" class="form-submit">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+    <div class="container-1">
+        <div class="config">
+            <a href="#" title="Ajustes"><img src="static/556-5567171_gear-setting-icon-clipart 1.png" alt="Ajustes"></a>
+        </div>
+        <div class="casa">
+            <a href="{{ url_for('admin_home') }}" title="Inicio"><img src="static/25694 1.png" alt="Inicio"></a>
+        </div>
+        <div class="download-20">
+            <a href="{{ url_for('index') }}" title="Cerrar Sesión"><img src="static/iconmonstr-log-out-17-240.png" alt="Cerrar Sesión"></a>
+        </div>
+    </div>
+
+    <div id="confirmationDialog" class="confirmation-dialog">
+        <p>¿Está seguro de que deseas eliminar este usuario?</p>
+        <button onclick="cancelDelete()" class="form-submit">Cancelar</button>
+        <button onclick="confirmDelete()" class="form-submit">Aceptar</button>
+    </div>
+
+    <script>
+        var userIdToDelete;
+
+        function showConfirmationDialog(userId) {
+            userIdToDelete = userId;
+            document.getElementById('confirmationDialog').style.display = 'block';
+        }
+
+        function confirmDelete() {
+            document.getElementById('confirmationDialog').style.display = 'none';
+            // Obtener el ID del formulario a enviar
+            var formId = 'eliminarForm' + userIdToDelete;
+            // Enviar el formulario
+            document.getElementById(formId).submit();
+        }
+
+        function cancelDelete() {
+            document.getElementById('confirmationDialog').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

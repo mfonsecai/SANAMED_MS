@@ -1,33 +1,107 @@
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style4.css') }}">
-    <title>Juegos</title>
-    <link rel="shortcut icon" href="{{ url_for('static', filename='saludmental1.ico ') }}">
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Juegos Educativos</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style4.css') }}">
+    </head>
+    <body>
+        <h1>Juegos Educativos</h1>
+        <div id="juegos">
+            <!-- Los juegos se cargarán aquí dinámicamente -->
+        </div>
+    
+        <div id="meditacion" style="display: none;">
+            <h2>Juego de Meditación</h2>
+            <p>Inhala profundamente y exhala lentamente. Repite esto varias veces.</p>
+            <button id="iniciar-meditacion">Iniciar Meditación</button>
+            <div id="temporizador" style="display: none;">
+                <p id="cuenta-regresiva">10</p>
+            </div>
+        </div>
+        <div id="cuestionario" style="display: none;">
+            <h2>Cuestionario de Autoevaluación</h2>
+            <form id="form-cuestionario">
+                <label for="respuesta1">¿Te sientes estresado hoy?</label><br>
+                <input type="radio" name="respuesta1" value="si"> Sí<br>
+                <input type="radio" name="respuesta1" value="no"> No<br>
+        
+                <label for="respuesta2">¿Has tenido problemas para dormir últimamente?</label><br>
+                <input type="radio" name="respuesta2" value="si"> Sí<br>
+                <input type="radio" name="respuesta2" value="no"> No<br>
+        
+                <button type="submit">Enviar</button>
+            </form>
+            <div id="resultado" style="display: none;"></div>
+        </div>
+    
+        <script>
+            fetch('/api/juegos')
+                .then(response => response.json())
+                .then(data => {
+                    const juegosDiv = document.getElementById('juegos');
+                    data.juegos.forEach(juego => {
+                        const juegoDiv = document.createElement('div');
+                        juegoDiv.innerHTML = `<h2>${juego.nombre}</h2><p>${juego.descripcion}</p><button onclick="jugar(${juego.id})">Jugar</button>`;
+                        juegosDiv.appendChild(juegoDiv);
+                    });
+                })
+                .catch(error => console.error('Error al cargar los juegos:', error));
+    
+            function jugar(id) {
+                if (id === 1) { // Juego de Meditación
+                    document.getElementById('juegos').style.display = 'none';
+                    document.getElementById('meditacion').style.display = 'block';
+                }
+                // Aquí podrías agregar más lógica para otros juegos
+            }
+    
+            document.getElementById('iniciar-meditacion').addEventListener('click', function() {
+                let tiempo = 10; // Duración en segundos
+                const cuentaRegresiva = document.getElementById('cuenta-regresiva');
+                document.getElementById('temporizador').style.display = 'block';
+    
+                const intervalo = setInterval(() => {
+                    cuentaRegresiva.textContent = tiempo;
+                    tiempo--;
+    
+                    if (tiempo < 0) {
+                        clearInterval(intervalo);
+                        cuentaRegresiva.textContent = "¡Meditación finalizada!";
+                    }
+                }, 1000);
+            });
 
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    <div class="login-container">
-        <h2 title="Seleccione un juego para jugar">¿Qué desea jugar?</h2>
-        <div class=' img '>
-            <img src="static/image 10 (1).png" alt="Imagen del juego" title="Imagen de actividades y juegos">
-        </div>
-        <!-- Botones Bootstrap -->
-        <a href="{{ url_for('rompecabezas') }}" class="btn btn-primary btn-lg btn-block" title="Jugar Rompecabezas">Rompecabezas</a>
-        <a href="{{ url_for('laberinto') }}" class="btn btn-success btn-lg btn-block" title="Jugar Laberinto">Laberinto</a>
-        <div class="container-1">
-            <div class="config">
-                <a href="#" title="Ajustes"><img src="static/556-5567171_gear-setting-icon-clipart 1.png" alt="Ajustes"></a>
-            </div>
-            <div class="casa">
-                <a href="{{ url_for('user_home') }}" title="Inicio"><img src="static/25694 1.png" alt="Inicio"></a>
-            </div>
-            <div class="download-20">
-                <a href="{{ url_for('index') }}" title="Cerrar Sesión"><img src="static/iconmonstr-log-out-17-240.png" alt="Cerrar Sesión"></a>
-            </div>
-        </div>
-        </div>
-
-    <!-- Agregar Bootstrap JS (opcional, solo si necesitas funcionalidades como modales) -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+            function jugar(id) {
+                document.getElementById('juegos').style.display = 'none';
+        
+                if (id === 1) { // Juego de Meditación
+                    document.getElementById('meditacion').style.display = 'block';
+                } else if (id === 2) { // Cuestionario de Autoevaluación
+                    document.getElementById('cuestionario').style.display = 'block';
+                }
+                // Aquí podrías agregar más lógica para otros juegos
+            }
+        
+            // Manejar el envío del cuestionario
+            document.getElementById('form-cuestionario').addEventListener('submit', function(event) {
+                event.preventDefault(); // Evitar el envío del formulario
+                const respuesta1 = document.querySelector('input[name="respuesta1"]:checked');
+                const respuesta2 = document.querySelector('input[name="respuesta2"]:checked');
+        
+                let resultadoTexto = 'Tus respuestas:\n';
+                if (respuesta1) {
+                    resultadoTexto += `1. Te sientes estresado hoy: ${respuesta1.value}\n`;
+                }
+                if (respuesta2) {
+                    resultadoTexto += `2. Has tenido problemas para dormir últimamente: ${respuesta2.value}\n`;
+                }
+        
+                document.getElementById('resultado').textContent = resultadoTexto;
+                document.getElementById('resultado').style.display = 'block';
+                document.getElementById('cuestionario').style.display = 'none'; // Ocultar el cuestionario después de enviar
+            });
+        </script>
+    </body>
+    </html>
+    

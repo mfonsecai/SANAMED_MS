@@ -1,24 +1,35 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.container {
-    width: 400px;
-    margin: 80px auto;
-    height: 790px;
-    background-color: #fff;
-    padding: 50px;
-    border-radius: 5px;
+body {
+    font-family: Arial, sans-serif;
+    /*background-color: #3e4e3e;*/
+    background: url("fondoproyecto.png") no-repeat center center fixed;
+    background-size: cover;
+    line-height: 1.6;
+}
+h1 {
     text-align: center;
-    font-family: "Releway", sans-serif;
-    color: #8DCB9E;
-    font-size: 25px;
-    position: relative;
+    margin: 10px;
+    font-size: 2.5em;
+    color: #000000;
+    font-family: "Jomhuria", serif;
+}
+.container {
+    width: 1280px;
+    height: 700px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .appointment-form {
-    max-width: 500px;
+    max-width: 700px;
     margin: auto;
     height: 420px;
     padding: 20px;
@@ -39,7 +50,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .form-input,
@@ -47,7 +58,7 @@ body {
 .form-textarea {
     width: calc(100% - 110px);
     padding: 10px;
-    font-size: 14px;
+    font-size: 17px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
@@ -70,8 +81,8 @@ body {
 
 .form-submit {
     display: inline-block;
-    width: 80%;
-    padding: 15px;
+    width: 100%;
+    padding: 20px;
     background-color: #8DCB9E;
     color: white;
     text-decoration: none;
@@ -79,7 +90,7 @@ body {
     border-radius: 5px;
     font-size: 22px;
     cursor: pointer;
-    margin-top: 50px;
+    margin-top: 100px;
     transition: background-color 0.3s ease;
 }
 
@@ -87,32 +98,7 @@ body {
     background-color: darkgreen;
 }
 
-.container-1 {
-    display: flex;
-    justify-content: center;
-    gap: 100px;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-}
 
-.config, .casa, .download-20 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.config img, .casa img, .download-20 img {
-    width: 45px;
-    height: 50px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.config img:hover, .casa img:hover, .download-20 img:hover {
-    transform: scale(1.1);
-}
 
 .alert {
     background-color: #8DCB9E;

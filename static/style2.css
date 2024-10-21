@@ -6,667 +6,131 @@
 
 body {
     font-family: Arial, sans-serif;
+    /*background-color: #3e4e3e;*/
     background: url("fondoproyecto.png") no-repeat center center fixed;
     background-size: cover;
-    color: #333;
     line-height: 1.6;
 }
 
-.settings-v-1 .how-are-you-feeling-today,
-.settings-v-1 .calmado,
-.settings-v-1 .feliz,
-.settings-v-1 .relajado,
-.settings-v-1 .enojado,
-.settings-v-1 .triste,
-.settings-v-1 .herramientas-yactividades a,
-.settings-v-1 .terapia a,
-.settings-v-1 .calendario a,
-.settings-v-1 .sanamed,
-.settings-v-1 .musica-relajante a {
-    font-family: "Releway", sans-serif;
-}
-
-.settings-v-1 .group-73,
-.settings-v-1 .group-81,
-.settings-v-1 .happy,
-.settings-v-1 .calm,
-.settings-v-1 .relax,
-.settings-v-1 .focus,
-.settings-v-1 .focus-mood,
-.settings-v-1 .frame-13,
-.settings-v-1 .wrapper-2,
-.settings-v-1 .wrapper-3,
-.settings-v-1 .wrapper-1 {
-    font-family: "Releway", sans-serif;
-}
-
-.wrapper {
-    width: 90%; /* Ajusta según sea necesario */
-    max-width: 1200px; /* O cualquier ancho máximo que prefieras */
-    margin: 20px auto; /* Margen superior e inferior de 20px, centrado */
-    padding: 20px; /* Espaciado interno */
-    border-radius: 8px; /* Bordes redondeados */
-    background-color: #ffffff; /* Fondo blanco */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-}
-
-.settings-container {
-    background: var(--palette-white-1, #ffffff);
-    display: flex;
-    flex-direction: column;
-    padding: 16px 7px 29px 6px;
-    box-sizing: border-box;
-}
-
-.settings-container .group-73 {
-    border-radius: 16px;
-    margin: 0 6px 29px 11px;
-    display: flex;
-    flex-direction: column;
-    width: calc(100% - 17px);
-    box-sizing: border-box;
-}
-
-.settings-v-1 .how-are-you-feeling-today {
-    margin-bottom: 19.4px;
-    display: inline-block;
-    align-self: flex-start;
-    overflow-wrap: break-word;
-    font-weight: 500;
-    font-size: 16px;
-    color: #371B34;
-}
-
-.settings-v-1 .group-81 {
-    border-radius: 16px;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.settings-v-1 .calm-1 {
-    border-radius: 16px;
-    margin-right: 24.4px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-grow: 1;
-    flex-basis: 60.1px;
-    box-sizing: border-box;
-    margin: -11%;
-}
-
-.settings-v-1 .calm-icon {
-    width: 34px;
-    height: 32.9px;
-    margin: -110%;
-}
-
-.settings-v-1 .calmado {
-    margin: 20px 0 17.4px;
-    overflow-wrap: break-word;
-    font-family: "Releway", sans-serif;
-    font-weight: 500;
-    font-size: 18px;
-    color: var(--gray-3, #828282);
-    margin-left: 15px;
-}
-
-.settings-v-1 .happy {
-    margin: 0 3.1px 0 4.6px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-grow: 1;
-    flex-basis: 60.1px;
-    box-sizing: border-box;
-    margin-left: 10px;
-    margin-right: 8px;
-}
-
-.settings-v-1 .feliz {
-    margin: 20px 0 17.4px;
-    overflow-wrap: break-word;
-    font-family: "Releway", sans-serif;
-    font-weight: 500;
-    font-size: 18px;
-    color: var(--gray-3, #828282);
-}
-
-.settings-v-1 .happy-1 {
-    display: flex;
-    width: 33px;
-    height: 32.6px;
-    box-sizing: border-box;
-    margin: -11%;
-}
-
-.settings-v-1 .layer-1 {
-    width: 33.7px;
-    height: 32.6px;
-}
-
-.settings-v-1 .relax {
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-grow: 1;
-    flex-basis: 61.9px;
-    box-sizing: border-box;
-    margin-left: 9px;
-    margin-right: 85px;
-}
-
-.settings-v-1 .relajado {
-    margin: 0 30px 0 17.4px;
-    overflow-wrap: break-word;
-    font-family: "Releway", sans-serif;
-    font-weight: 500;
-    font-size: 18px;
-    margin-left: 10px;
-    margin-right: -50px;
-    color: var(--gray-3, #828282);
-}
-
-.settings-v-1 .relax-1 {
-    mix-blend-mode: overlay;
-    width: 33.9px;
-    height: 30.5px;
-    margin: -4px;
-}
-
-.settings-v-1 .focus {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-grow: 1;
-    flex-basis: 60.1px;
-    box-sizing: border-box;
-    margin-left: -90px;
-    margin-right: 10px;
-}
-
-.settings-v-1 .enojado {
-    margin: 0 20px 0 17.4px;
-    overflow-wrap: break-word;
-    font-family: "Releway", sans-serif;
-    font-weight: 500;
-    font-size: 18px;
-    color: var(--gray-3, #828282);
-    margin-left: 10px;
-    margin-right: 0px;
-}
-
-.settings-v-1 .focus-1 {
-    width: 33.9px;
-    height: 30.5px;
-    margin: -5px;
-    color: #FFFFFF;
-}
-
-.settings-v-1 .fa-6-solidface-angry {
-    display: flex;
-    width: 32.8px;
-    height: 31.8px;
-    box-sizing: border-box;
-}
-
-.settings-v-1 .vector-6 {
-    width: 32.8px;
-    height: 31.8px;
-}
-
-.settings-v-1 .focus-mood {
-    margin-bottom: 0.3px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-grow: 1;
-    flex-basis: 60.1px;
-    box-sizing: border-box;
-    margin-left: 2px;
-    margin-right: 10px;
-}
-
-.settings-v-1 .triste {
-    margin: -15px 40px 0 17.4px;
-    overflow-wrap: break-word;
-    font-family: "Releway", sans-serif;
-    font-weight: 500;
-    font-size: 18px;
-    color: var(--gray-3, #828282);
-    margin-left: 10px;
-    margin-right: 100px;
-}
-
-.settings-v-1 .focus-mood-1 {
-    display: flex;
-    width: 32.8px;
-    height: 31.8px;
-    box-sizing: border-box;
-}
-
-.settings-v-1 .vector-7 {
-    width: 32.8px;
-    height: 31.8px;
-}
-
-.frame-6 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto 100px;
-}
-
-.settings-v-1 .sanamed {
-    overflow-wrap: break-word;
-    font-family: "Releway", sans-serif;
-    font-weight: 700;
-    font-size: 32px;
-    color: #000000;
-    justify-content: center;
-}
-
-.settings-v-1 .salud-mental-1 {
-    border-radius: 42px;
-    background: url('../assets/images/salud_mental_1.png') 50% / contain no-repeat;
-    width: 68px;
-    height: 56px;
-}
-
-
-
-.settings-v-1 .herramientas-yactividades {
-    overflow-wrap: break-word;
-    font-family: "Releway", sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    color: #000000;
-}
-
-.settings-v-1 .terapia {
-    margin: 0 0 10px;
-    overflow-wrap: break-word;
-    font-family: "Releway", sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    color: #000000;
-}
-
-.settings-v-1 .musica-relajante {
-    margin: 10px 0 0;
-    overflow-wrap: break-word;
-    font-family: "Releway", sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    color: #000000;
-}
-
-.settings-v-1 .group-83 {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 0;
-    padding-bottom: 0;
-    box-sizing: border-box;
-    margin: 10px 0 0;
-}
-
-
-
-.settings-v-1 .calendario {
-    margin: 10px 0 0;
-    overflow-wrap: break-word;
-    font-family: "Releway", sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    color: #000000;
-}
-
 .container {
- width: 1280px;
-  height: 732px;
-  background-color: rgb(255, 255, 255);
-  padding: 20px;
-  margin: 40px auto; /* Añade un margen superior para bajarlo */
-  margin-left: 100px;
-  
-}
-    
-
-
- .group-73 .how-are-you-feeling-today{
-    /* Ajusta el margen superior para subirlo */
-    margin-top: -50px;  /* Ajusta este valor según lo necesites */
-    
-    /* Ajusta el margen izquierdo para moverlo a la izquierda */
-    margin-left: -5px;  /* Ajusta este valor según lo necesites */
-
-    /* Opcional: para mejorar la apariencia */
-    font-size: 16px;  /* Tamaño de la fuente */
-    color: #333;      /* Color del texto */
-    text-align: center; /* Centrar el texto */
+    width: 1280px;
+    height: 700px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+/* Estilos del estado de ánimo */
+.how-are-you-feeling-today {
+    font-size: 35px;
+    margin: 20px 0;
+    text-align: center;
+    color: #333;
+}
 
 .group-81 {
-    display: flex;                /* Usar flexbox para alinear elementos */
-    flex-direction: column;      /* Organizar en columna */
-    align-items: center;         /* Centrar horizontalmente */
-    margin-top: 20px;           /* Margen superior para alejar del contenido superior */
-}
-
-.happy, .calm, .relax, .focus, .focus-mood {
-    display: flex;               /* Usar flexbox para alinear el icono y el texto */
-    flex-direction: column;      /* Organizar en columna */
-    align-items: center;         /* Centrar horizontalmente */
-    margin: 15px 0;             /* Margen vertical entre cada emoción */
-    color: #371B34;
-}
-
-.wrapper-5, .wrapper-4, .wrapper-6, .wrapper-7, .wrapper-8 {
-    margin-bottom: 5px;         /* Espacio entre el botón y el texto */
-}
-
-button {
-    border: none;                /* Sin borde */
-    background: none;           /* Sin fondo */
-    cursor: pointer;            /* Cambiar cursor al pasar por encima */
-}
-
-.vector-7 {
-    width: 50px;                /* Ancho del icono */
-    height: auto;               /* Alto automático para mantener la proporción */
-}
-
-/* Aplicar la animación a la imagen */
-.vector-7 {
-    transition: transform 0.5s ease-in-out; /* Transición para suavizar el cambio */
-}
-
-/* Estilo adicional cuando se está animando */
-.vector-7:hover {
-    animation: spin 1s linear infinite; /* Activar la animación al pasar el cursor sobre la imagen */
-}
-
-.container-1 {
     display: flex;
     justify-content: center;
     gap: 100px;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin: 30px 0;
 }
 
-.config, .casa, .download-20 {
+.wrapper-4, .wrapper-5, .wrapper-6, .wrapper-7, .wrapper-8 {
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -240px;
-}
-
-.config img, .casa img, .download-20 img {
-    width: 45px;
-    height: 50px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.2s;
 }
 
+.wrapper-5 { background-color: #FFD700; } /* Feliz */
+.wrapper-4 { background-color: #B19CD9; } /* Calmado */
+.wrapper-6 { background-color: #48D1CC; } /* Estresado */
+.wrapper-7 { background-color: #FF6B6B; } /* Enojado */
+.wrapper-8 { background-color: #87CEEB; } /* Triste */
 
-
-.container-1 a img  {
-    transform: translateY(80px); /* Ajusta este valor según lo necesites */
+.wrapper-4:hover, .wrapper-5:hover, .wrapper-6:hover, 
+.wrapper-7:hover, .wrapper-8:hover {
+    transform: scale(1.1);
 }
 
+.vector-7 {
+    width: 35px;
+    height: 35px;
+}
 
-
-.container-1 a {
-    flex: 1;
+.feliz, .calmado, .relajado, .enojado, .triste {
     text-align: center;
-    
+    margin-top: 8px;
+    font-size: 14px;
+    color: #333;
 }
 
-.container-1 a img {
-    vertical-align: middle;
-    transform: translateY(50px); /* Ajusta este valor según lo necesites */
-}
-
-
-
-
-
-@media (max-width: 600px) {
-    .container-1 {
-        padding: 5px 0; /* Ajusta el padding para pantallas más pequeñas */
-    }
-
-    .container-1 a img {
-        transform: translateY(5px); /* Ajusta la posición para pantallas más pequeñas */
-    }
-}
-
-
-
-
-
-@media (max-width: 600px) {
-    .container-1 {
-        padding: 5px 0; /* Ajusta el padding para pantallas más pequeñas */
-    }
-
-    .container-1 a img {
-        transform: translateY(5px); /* Ajusta la posición para pantallas más pequeñas */
-    }
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-
-
-.settings-v-1 .wrapper-4 {
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 16px;
-    background: #AEAFF7;
-    position: relative;
-    margin-bottom: 6px;
-    margin-left: 10px;
-    display: flex;
-    padding: 15.1px 1.4px 14.2px 13.8px;
-    width: 60.1px;
-    height: 61px;
-    box-sizing: border-box;
-    top: 10px;
-
-    
-}
-
-.settings-v-1 .wrapper-5 {
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 16px;
-    background: rgba(249, 219, 57, 0.84);
-    position: relative;
-    margin-bottom: 9.2px;
-    display: flex;
-    padding: 14.2px 13.5px 14.2px 13px;
-    width: 60.1px;
-    height: 61px;
-    box-sizing: border-box;
-    top: 10px;
-
-}
-
-.settings-v-1 .wrapper-6 {
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 16px;
-    background: #4B8D8C;
-    position: relative;
-    margin: 0 8.8px 9.6px 0;
-    display: flex;
-    padding: 16px 13.5px 14.5px 12.7px;
-    width: 60.1px;
-    height: 61px;
-    box-sizing: border-box;
-    top: -8px;
-    right: -35px;
-
-
-}
-
-.settings-v-1 .wrapper-7 {
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 16px;
-    background: #F05454;
-    position: relative;
-    margin-bottom: 9.6px;
-    display: flex;
-    padding: 15.1px 13.4px 14.2px 13.8px;
-    width: 60.1px;
-    height: 61px;
-    box-sizing: border-box;
-    top: -10px;
-    right: -10px;
-
-}
-
-.settings-v-1 .wrapper-8 {
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 16px;
-    background: #8DCB9E;
-    position: relative;
-    margin-bottom: 9.6px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 15.1px 13.4px 14.2px 13.8px;
-    height: 61px;
-    width: 60.1px;
-    top: -30px;
-    right: 40px;
-    box-sizing: border-box;
-}
-
-.settings-v-1 {
-    display: flex;
-    flex-direction: row; /* Alinea los wrappers horizontalmente */
-    justify-content: -20px; /* Espacio entre las columnas */
-    width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
-}
-
+/* Features grid */
 .wrapper-2, .wrapper-3 {
-    display: flex; /* Muestra los frames en una fila */
-    flex-direction: column; /* Organiza los frames verticalmente */
-    width: 90%; /* Cada wrapper ocupa aproximadamente la mitad del contenedor */
-    margin-bottom: 0px; /* Espacio entre las filas */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 40px;
 }
 
-.settings-v-1 .frame-10,
-.settings-v-1 .frame-11,
-.settings-v-1 .frame-12,
-.settings-v-1 .frame-14 {
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
+.frame-10, .frame-11, .frame-12, .frame-14 {
     background: #E1F8E8;
-    margin: 10px 0; /* Espacio entre los frames verticalmente */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 16.5px 0;
-    width: 75%; /* Ocupa el ancho completo del wrapper */
-    height: 200px;
-    
-    /* Elimina el subrayado de los enlaces */
-    text-decoration: none; 
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-
-/* Estilo específico para los enlaces dentro de los frames */
-.settings-v-1 .frame-10 a,
-.settings-v-1 .frame-11 a,
-.settings-v-1 .frame-12 a,
-.settings-v-1 .frame-14 a {
-    text-decoration: none; /* Elimina el subrayado del enlace */
-    color: inherit; /* Asegura que el color del texto sea el mismo que el de su contenedor */
-}
-
-
-/* Estilo del botón de chat */
-.frame-13 {
-    display: flex;
-    flex-direction: column; /* Organiza el contenido verticalmente */
-    align-items: center; /* Centra el contenido */
-    margin-top: -150px; /* Espacio entre las columnas y el botón */
-    margin-right: -1100px; /* Ajustar según sea necesario */
-}
-
-/* Estilo específico para los enlaces dentro de frame-13 */
-.frame-13 a {
-    text-decoration: none; /* Elimina el subrayado del enlace */
-    color: inherit; /* Asegura que el color del texto sea el mismo que el de su contenedor */
-}
-
 
 h1 {
     text-align: center;
-    margin: 10px ; /* Ajusta el valor según sea necesario */
+    margin: 10px;
     font-size: 2.5em;
     color: #000000;
-    font-family: "Jomhuria", serif;}
+    font-family: "Jomhuria", serif;
+}
 
-    
-    
 .imagen-superior {
     width: 100%;
     height: auto;
-    max-height: 100px; /* Ajusta la altura máxima según tus necesidades */
-    display: block;
-    margin: 0 auto;
-  }
-  
-  .imagen-superior {
+    max-height: 100px;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 80px; /* Ajusta según el tamaño necesario */
-    object-fit: cover; /* Para que la imagen cubra toda el área */
-    z-index: -1; /* Para que el contenido esté por encima */
-  }
-  
-  
-  .imagen-esquina {
-    width: 60px; /* Tamaño pequeño */
+    object-fit: cover;
+    z-index: -1;
+}
+
+.imagen-esquina {
+    width: 60px;
     height: auto;
     position: absolute;
-    top: 14px; /* Ajusta según sea necesario */
-  }
-  
-  .izquierda {
-    left: 100px; /* Esquina superior izquierda */
-  }
-  
-  .derecha {
-    right: 100px; /* Esquina superior derecha */
-  }
-  
-  
-  
-  .menu-container {
+    top: 14px;
+}
+
+.izquierda {
+    left: 100px;
+}
+
+.derecha {
+    right: 100px;
+}
+
+.menu-container {
     position: fixed;
     top: 0px;
     right: 10px;
     z-index: 1000;
     width: 60px;
-  }
-  
-  
-  
-  .menu-dropdown {
+}
+
+.menu-dropdown {
     display: none;
     position: absolute;
     right: 0;
@@ -675,19 +139,56 @@ h1 {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-  }
-  
-  .menu-dropdown a {
+}
+
+.menu-dropdown a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-  }
-  
-  .menu-dropdown a:hover {
+}
+
+.menu-dropdown a:hover {
     background-color: #f1f1f1;
-  }
-  
-  .show {
+}
+
+.show {
     display: block;
-  }
+}
+
+/* Chat bot button */
+.frame-13 {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        margin: 20px auto;
+    }
+    
+    .group-81 {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    
+    .wrapper-4, .wrapper-5, .wrapper-6, .wrapper-7, .wrapper-8 {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .vector-7 {
+        width: 30px;
+        height: 30px;
+    }
+}

@@ -2,8 +2,8 @@ import re
 from datetime import datetime,date
 from flask import Flask, render_template, request, session, redirect, url_for, jsonify,flash
 from flask_mysqldb import MySQL
-import random
 
+import random
 
 # Configurar la aplicación Flask
 app = Flask(__name__, template_folder="templates")
@@ -100,10 +100,6 @@ def login():
     return render_template('index.html')
 
 
-
-
-
-
 @app.route('/registro_emocion', methods=['POST'])
 def registro_emocion():
     if 'logged_in' in session and session['logged_in']:
@@ -193,7 +189,8 @@ def user_home():
         return render_template('user_home.html')
     else:
         return redirect(url_for('index'))
-   
+
+
 @app.route('/admin_home')
 def admin_home():
     if 'logged_in' in session and session['logged_in']:
@@ -210,51 +207,10 @@ def profesional_home():
     else:
         return redirect(url_for('index'))
 
-juegos = [
-    {
-        "id": 1,
-        "nombre": "Juego de Meditación",
-        "descripcion": "Un juego que te guía a través de una serie de ejercicios de meditación.",
-        "dificultad": "Fácil",
-        "duracion": "10 minutos"
-    },
-    {
-        "id": 2,
-        "nombre": "Cuestionario de Autoevaluación",
-        "descripcion": "Evalúa tu estado emocional y mental con este cuestionario.",
-        "dificultad": "Moderada",
-        "duracion": "5 minutos"
-    },
-    {
-        "id": 3,
-        "nombre": "Desafío de Estrategia",
-        "descripcion": "Desarrolla habilidades de pensamiento crítico y resolución de problemas.",
-        "dificultad": "Difícil",
-        "duracion": "15 minutos"
-    },
-    {
-        "id": 4,
-        "nombre": "Juego de Respiración Profunda",
-        "descripcion": "Aprende técnicas de respiración para reducir la ansiedad.",
-        "dificultad": "Fácil",
-        "duracion": "5 minutos"
-    },
-    {
-        "id": 5,
-        "nombre": "Jardín de Gratitud",
-        "descripcion": "Expresa y comparte cosas por las que estás agradecido.",
-        "dificultad": "Fácil",
-        "duracion": "Sin límite"
-    }
-]
 
 @app.route('/games')
 def games():
     return render_template('games.html')
-
-@app.route('/api/juegos', methods=['GET'])
-def obtener_juegos():
-    return jsonify({"juegos": juegos}), 200
 
 
 @app.route('/rompecabezas')

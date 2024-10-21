@@ -1,8 +1,16 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #ffffff;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background: url("fondoproyecto.png") no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    line-height: 1.6;
+}
 
 .settings-v-1 .how-are-you-feeling-today,
 .settings-v-1 .calmado,
@@ -26,496 +34,353 @@ body {
 .settings-v-1 .focus,
 .settings-v-1 .focus-mood,
 .settings-v-1 .frame-13,
-.settings-v-1 .container-2,
-.settings-v-1 .container-3,
-.settings-v-1 .container-1 {
+.settings-v-1 .wrapper-2,
+.settings-v-1 .wrapper-3,
+.settings-v-1 .wrapper-1 {
     font-family: "Releway", sans-serif;
+}
+
+.wrapper {
+    width: 90%; /* Ajusta según sea necesario */
+    max-width: 1200px; /* O cualquier ancho máximo que prefieras */
+    margin: 20px auto; /* Margen superior e inferior de 20px, centrado */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #ffffff; /* Fondo blanco */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.settings-container {
+    background: var(--palette-white-1, #ffffff);
+    display: flex;
+    flex-direction: column;
+    padding: 16px 7px 29px 6px;
+    box-sizing: border-box;
+}
+
+.settings-container .group-73 {
+    border-radius: 16px;
+    margin: 0 6px 29px 11px;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 17px);
+    box-sizing: border-box;
+}
+
+.settings-v-1 .how-are-you-feeling-today {
+    margin-bottom: 19.4px;
+    display: inline-block;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-weight: 500;
+    font-size: 16px;
+    color: #371B34;
+}
+
+.settings-v-1 .group-81 {
+    border-radius: 16px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.settings-v-1 .calm-1 {
+    border-radius: 16px;
+    margin-right: 24.4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    flex-basis: 60.1px;
+    box-sizing: border-box;
+    margin: -11%;
+}
+
+.settings-v-1 .calm-icon {
+    width: 34px;
+    height: 32.9px;
+    margin: -110%;
+}
+
+.settings-v-1 .calmado {
+    margin: 20px 0 17.4px;
+    overflow-wrap: break-word;
+    font-family: "Releway", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--gray-3, #828282);
+    margin-left: 15px;
+}
+
+.settings-v-1 .happy {
+    margin: 0 3.1px 0 4.6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    flex-basis: 60.1px;
+    box-sizing: border-box;
+    margin-left: 10px;
+    margin-right: 8px;
+}
+
+.settings-v-1 .feliz {
+    margin: 20px 0 17.4px;
+    overflow-wrap: break-word;
+    font-family: "Releway", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--gray-3, #828282);
+}
+
+.settings-v-1 .happy-1 {
+    display: flex;
+    width: 33px;
+    height: 32.6px;
+    box-sizing: border-box;
+    margin: -11%;
+}
+
+.settings-v-1 .layer-1 {
+    width: 33.7px;
+    height: 32.6px;
+}
+
+.settings-v-1 .relax {
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    flex-basis: 61.9px;
+    box-sizing: border-box;
+    margin-left: 9px;
+    margin-right: 85px;
+}
+
+.settings-v-1 .relajado {
+    margin: 0 30px 0 17.4px;
+    overflow-wrap: break-word;
+    font-family: "Releway", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    margin-left: 10px;
+    margin-right: -50px;
+    color: var(--gray-3, #828282);
+}
+
+.settings-v-1 .relax-1 {
+    mix-blend-mode: overlay;
+    width: 33.9px;
+    height: 30.5px;
+    margin: -4px;
+}
+
+.settings-v-1 .focus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    flex-basis: 60.1px;
+    box-sizing: border-box;
+    margin-left: -90px;
+    margin-right: 10px;
+}
+
+.settings-v-1 .enojado {
+    margin: 0 20px 0 17.4px;
+    overflow-wrap: break-word;
+    font-family: "Releway", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--gray-3, #828282);
+    margin-left: 10px;
+    margin-right: 0px;
+}
+
+.settings-v-1 .focus-1 {
+    width: 33.9px;
+    height: 30.5px;
+    margin: -5px;
+    color: #FFFFFF;
+}
+
+.settings-v-1 .fa-6-solidface-angry {
+    display: flex;
+    width: 32.8px;
+    height: 31.8px;
+    box-sizing: border-box;
+}
+
+.settings-v-1 .vector-6 {
+    width: 32.8px;
+    height: 31.8px;
+}
+
+.settings-v-1 .focus-mood {
+    margin-bottom: 0.3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    flex-basis: 60.1px;
+    box-sizing: border-box;
+    margin-left: 2px;
+    margin-right: 10px;
+}
+
+.settings-v-1 .triste {
+    margin: -15px 40px 0 17.4px;
+    overflow-wrap: break-word;
+    font-family: "Releway", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--gray-3, #828282);
+    margin-left: 10px;
+    margin-right: 100px;
+}
+
+.settings-v-1 .focus-mood-1 {
+    display: flex;
+    width: 32.8px;
+    height: 31.8px;
+    box-sizing: border-box;
+}
+
+.settings-v-1 .vector-7 {
+    width: 32.8px;
+    height: 31.8px;
+}
+
+.frame-6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 100px;
+}
+
+.settings-v-1 .sanamed {
+    overflow-wrap: break-word;
+    font-family: "Releway", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: #000000;
+    justify-content: center;
+}
+
+.settings-v-1 .salud-mental-1 {
+    border-radius: 42px;
+    background: url('../assets/images/salud_mental_1.png') 50% / contain no-repeat;
+    width: 68px;
+    height: 56px;
 }
 
 
 
+.settings-v-1 .herramientas-yactividades {
+    overflow-wrap: break-word;
+    font-family: "Releway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #000000;
+}
+
+.settings-v-1 .terapia {
+    margin: 0 0 10px;
+    overflow-wrap: break-word;
+    font-family: "Releway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #000000;
+}
+
+.settings-v-1 .musica-relajante {
+    margin: 10px 0 0;
+    overflow-wrap: break-word;
+    font-family: "Releway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #000000;
+}
+
+.settings-v-1 .group-83 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    box-sizing: border-box;
+    margin: 10px 0 0;
+}
+
+
+
+.settings-v-1 .calendario {
+    margin: 10px 0 0;
+    overflow-wrap: break-word;
+    font-family: "Releway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #000000;
+}
+
+.container {
+ width: 1280px;
+  height: 732px;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  margin: 40px auto; /* Añade un margen superior para bajarlo */
+  margin-left: 100px;
   
-  .settings-container {
-        background: var(--palette-white-1, #FFFFFF);
-        display: flex;
-        flex-direction: column;
-        padding: 16px 7px 29px 6px;
-        box-sizing: border-box;
-    }
-    
-
-    
-    .settings-container .group-73 {
-        border-radius: 16px;
-        margin: 0 6px 29px 11px;
-        display: flex;
-        flex-direction: column;
-        width: calc(100% - 17px);
-        box-sizing: border-box;
-    }
-    
-    .settings-v-1 .how-are-you-feeling-today {
-        margin-bottom: 19.4px;
-        display: inline-block;
-        align-self: flex-start;
-        overflow-wrap: break-word;
-        font-weight: 500;
-        font-size: 16px;
-        color: #371B34;
-    }
-    
-    .settings-v-1 .group-81 {
-        border-radius: 16px;
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        box-sizing: border-box;
-    }
-    
-    .settings-v-1 .calm-1  {
-        border-radius: 16px;
-        margin-right: 24.4px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex-grow: 1;
-        flex-basis: 60.1px;
-        box-sizing: border-box;
-        margin: -11% ;
-
-        
-    }
-    .settings-v-1 .calm-icon {
-        width: 34px;
-        height: 32.9px;
-        margin: -110% ;
-
-    }
-    
-    .settings-v-1 .calmado {
-        margin: 20 px 0 17.4px;
-        overflow-wrap: break-word;
-        font-family: "Releway", sans-serif;
-        font-weight: 500;
-        font-size: 12px;
-        color: var(--gray-3, #828282);
-        margin-left: 15px;
-    }
-    
- 
-    
-    .settings-v-1 .happy {
-        margin: 0 3.1px 0 4.6px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex-grow: 1;
-        flex-basis: 60.1px;
-        box-sizing: border-box;
-        margin-left: 10px;
-        margin-right: 8px;
-    }
-    
-    .settings-v-1 .feliz {
-        margin: 20 px 0 17.4px;
-        overflow-wrap: break-word;
-        font-family: "Releway", sans-serif;
-        font-weight: 500;
-        font-size: 12px;
-        color: var(--gray-3, #828282);
-        
-    }
-    
-    .settings-v-1 .happy-1 {
-        display: flex;
-        width: 33px;
-        height: 32.6px;
-        box-sizing: border-box;
-        margin: -11% ;
-    }
-    
-    .settings-v-1 .layer-1 {
-        width: 33.7px;
-        height: 32.6px;
-    }
-    
-    .settings-v-1 .relax {
-        border-radius: 16px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex-grow: 1;
-        flex-basis: 61.9px;
-        box-sizing: border-box;
-        margin-left: 9px;
-        margin-right: 85px;
-    }
-    
-    .settings-v-1 .relajado {
-        margin: 0 30px 0 17.4px;
-        overflow-wrap: break-word;
-        font-family: "Releway", sans-serif;
-        font-weight: 500;
-        font-size: 12px;
-        color: var(--gray-3, #828282);
-        
-    }
-    
-    .settings-v-1 .relax-1 {
-        mix-blend-mode: overlay;
-        width: 33.9px;
-        height: 30.5px;
-        margin: -4px;
-    }
-    
-    .settings-v-1 .focus {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex-grow: 1;
-        flex-basis: 60.1px;
-        box-sizing: border-box;
-        margin-left: -90px;
-        margin-right: 10px;
-    }
-    
-    .settings-v-1 .enojado {
-        margin: 0 40px 0 17.4px;
-        overflow-wrap: break-word;
-        font-family: "Releway", sans-serif;
-        font-weight: 500;
-        font-size: 12px;
-        color: var(--gray-3, #828282);
-        margin-left: 10px;
-        margin-right: 10px;
-        
-    }
-
-    .settings-v-1 .focus-1{
-        width: 33.9px;
-        height: 30.5px;
-        margin: -5px  ;
-        color: #FFFFFF;
-    }
-    
-    
-    .settings-v-1 .fa-6-solidface-angry {
-        display: flex;
-        width: 32.8px;
-        height: 31.8px;
-        box-sizing: border-box;
-        
-    }
-    
-    .settings-v-1 .vector-6 {
-        width: 32.8px;
-        height: 31.8px;
-    }
-    
-    .settings-v-1 .focus-mood {
-        margin-bottom: 0.3px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex-grow: 1;
-        flex-basis: 60.1px;
-        box-sizing: border-box;
-        margin-left: 2px;
-        margin-right: 10px;  
-    }
-    
-    .settings-v-1 .triste {
-        margin: -15px 17px 0 17.4px;
-        overflow-wrap: break-word;
-        font-family: "Releway", sans-serif;
-        font-weight: 500;
-        font-size: 12px;
-        color: var(--gray-3, #828282);
-    }
-    
-    .settings-v-1 .focus-mood-1{
-        display: flex;
-        width: 32.8px;
-        height: 31.8px;
-        box-sizing: border-box;
-
-    }
-    
-    .settings-v-1 .vector-7 {
-        width: 32.8px;
-        height: 31.8px;
-    }
-    
-    .frame-6 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: auto 100px;
-    }
-    
-    .settings-v-1 .sanamed {
-        overflow-wrap: break-word;
-        font-family: "Releway", sans-serif;
-        font-weight: 700;
-        font-size: 32px;
-        color: #000000;
-        justify-content: center;
-
-    }
-    
-    .settings-v-1 .salud-mental-1 {
-        border-radius: 42px;
-        background: url('../assets/images/salud_mental_1.png') 50% / contain no-repeat;
-        width: 68px;
-        height: 56px;
-    }
-    
-    .settings-v-1 .frame-10 {
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        border-radius: 10px;
-        background: #E1F8E8;
-        margin-right: 43px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 16.5px 0;
-        width: 148px;
-        box-sizing: border-box;
-    }
-    
-    .settings-v-1 .musica-relajante  a{
-        text-align: center;
-        overflow-wrap: break-word;
-        font-family: "Releway", sans-serif;
-        font-weight: 700;
-        font-size: 13px;
-        color: #000000;
-        text-decoration: none;
-    }
-    
-    .settings-v-1 .frame-11 {
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        border-radius: 10px;
-        background: #E1F8E8;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 30px 26px 40px;
-        width: 145px;
-        box-sizing: border-box;
-        margin-left: 40px; 
-      
-        
-
-    }
-    
-    .settings-v-1 .herramientas-yactividades a {
-        text-align: center;
-        overflow-wrap: break-word;
-        font-family: "Releway", sans-serif;
-        font-weight: 700;
-        font-size: 13px;
-        color: #000000;
-        text-decoration: none;
-    }
-    
-    .settings-v-1 .frame-12 {
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        border-radius: 10px;
-        background: #E1F8E8;
-        margin: 2px 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 9px 0 23px 0;
-        width: 152px;
-        height: fit-content;
-        box-sizing: border-box;
-    }
-    
-    .settings-v-1 .terapia a  {
-        overflow-wrap: break-word;
-        font-family: "Releway", sans-serif;
-        font-weight: 700;
-        font-size: 13px;
-        color: #000000;
-        text-decoration: none;
-    }
-    
-    
-
-        
-    
-    
-    .settings-v-1 .calendario a {
-        overflow-wrap: break-word;
-        font-family: "Releway", sans-serif;
-        font-weight: 700;
-        font-size: 13px;
-        color: #000000;
-        text-decoration: none;
-    }
-    
-    .settings-v-1 .image-7 {
-        background: url('../assets/images/image_7.png') 50% / contain no-repeat;
-        margin-bottom: 13px;
-        width: 77px;
-        height: 78px;
-    }
-    
-    .settings-v-1 .image-8 {
-        background: url('../assets/images/image_8.png') 50% / contain no-repeat;
-        margin-bottom: 14px;
-        width: 85px;
-        height: 90px;
-    }
-    
-    .settings-v-1 .frame-13 {
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        border-radius: 10px;
-        background: #E1F8E8;
-        margin: 0 6px 31px 12px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 0 20px 7px 0;
-        width: calc(100% - 18px);
-        box-sizing: border-box;
-    }
-    
-    .settings-v-1 .image-9 {
-        background: url('../assets/images/image_9.png') 50% / contain no-repeat;
-        width: 137px;
-        height: 113px;
-    }
-    
-    .settings-v-1 .login-button a {
-        border-radius: 8px;
-        background: #8DCB9E;
-        margin: 30px 2% 0px 30%; /* Ajuste para centrar verticalmente y mover un poco hacia abajo */
-        display: flex;
-        padding: 21px 0;
-        width: 168px;
-        height: fit-content;
-        box-sizing: border-box;
-        align-items: center;
-        justify-content: center;
-        
-    }
-    .label a{
-
-        text-decoration: none;
-        color: green;
-
-    }
-    
-    .settings-v-1 .image-10 {
-        background: url('../assets/images/image_10.png') 50% / contain no-repeat;
-        margin-bottom: 22px;
-        width: 61px;
-        height: 64px;
-    }
-    
-    .settings-v-1 .image-11 {
-        background: url('../assets/images/image_11.png') 50% / contain no-repeat;
-        margin-bottom: 19px;
-        width: 88px;
-        height: 80px;
-    }
-    
-  
-    
-    .settings-v-1 .container-2 {
-        margin: 0 36px 20px 36px;
-        display: flex;
-        flex-direction: row;
-        align-self: flex-start;
-        width: 343px;
-        box-sizing: border-box;
-    }
-    
-    .settings-v-1 .container-3 {
-        margin-bottom: 50px;
-        display: flex;
-        flex-direction: row;
-        align-self: center;
-        width: 339px;
-        box-sizing: border-box;
-    }
-    
-    .settings-v-1 .container-4 {
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        border-radius: 16px;
-        background: #AEAFF7;
-        position: relative;
-        margin-bottom: 6px;
-        margin-left: 10px;
-        display: flex;
-        padding: 15.1px 1.4px 14.2px 13.8px;
-        width: 60.1px;
-        height: 61px;
-        box-sizing: border-box;
-
-        
-    }
-    
-    .settings-v-1 .container-5 {
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        border-radius: 16px;
-        background: rgba(249, 219, 57, 0.84);
-        position: relative;
-        margin-bottom: 9.2px;
-        display: flex;
-        padding: 14.2px 13.5px 14.2px 13px;
-        width: 60.1px;
-        height: 61px;
-        box-sizing: border-box;
-    }
-    
-    .settings-v-1 .container-6 {
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        border-radius: 16px;
-        background: #4B8D8C;
-        position: relative;
-        margin: 0 8.8px 9.6px 0;
-        display: flex;
-        padding: 16px 13.5px 14.5px 12.7px;
-        width: 60.1px;
-        height: 61px;
-        box-sizing: border-box;
-    }
-    
-    .settings-v-1 .container-7 {
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        border-radius: 16px;
-        background: #F05454;
-        position: relative;
-        margin-bottom: 9.6px;
-        display: flex;
-        padding: 15.1px 13.4px 14.2px 13.8px;
-        width: 60.1px;
-        height: 61px;
-        box-sizing: border-box;
-    }
-   
-    .settings-v-1 .container-8 {
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        border-radius: 16px;
-        background: #8DCB9E;
-        position: relative;
-        margin-bottom: 24px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 15.1px 13.4px 14.2px 13.8px;
-        height: 61px;
-        width: 98%;
-        box-sizing: border-box;
-    }
+}
     
 
 
+ .group-73 .how-are-you-feeling-today{
+    /* Ajusta el margen superior para subirlo */
+    margin-top: -50px;  /* Ajusta este valor según lo necesites */
+    
+    /* Ajusta el margen izquierdo para moverlo a la izquierda */
+    margin-left: -5px;  /* Ajusta este valor según lo necesites */
 
+    /* Opcional: para mejorar la apariencia */
+    font-size: 16px;  /* Tamaño de la fuente */
+    color: #333;      /* Color del texto */
+    text-align: center; /* Centrar el texto */
+}
+
+
+.group-81 {
+    display: flex;                /* Usar flexbox para alinear elementos */
+    flex-direction: column;      /* Organizar en columna */
+    align-items: center;         /* Centrar horizontalmente */
+    margin-top: 20px;           /* Margen superior para alejar del contenido superior */
+}
+
+.happy, .calm, .relax, .focus, .focus-mood {
+    display: flex;               /* Usar flexbox para alinear el icono y el texto */
+    flex-direction: column;      /* Organizar en columna */
+    align-items: center;         /* Centrar horizontalmente */
+    margin: 15px 0;             /* Margen vertical entre cada emoción */
+    color: #371B34;
+}
+
+.wrapper-5, .wrapper-4, .wrapper-6, .wrapper-7, .wrapper-8 {
+    margin-bottom: 5px;         /* Espacio entre el botón y el texto */
+}
+
+button {
+    border: none;                /* Sin borde */
+    background: none;           /* Sin fondo */
+    cursor: pointer;            /* Cambiar cursor al pasar por encima */
+}
+
+.vector-7 {
+    width: 50px;                /* Ancho del icono */
+    height: auto;               /* Alto automático para mantener la proporción */
+}
 
 /* Aplicar la animación a la imagen */
 .vector-7 {
@@ -572,33 +437,6 @@ body {
 
 
 
-.settings-v-1 {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    height: 790px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    font-family: "Raleway", sans-serif; /* Asegúrate de que el nombre de la fuente esté correctamente escrito */
-}
-
-
-.container-1 {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px 0; /* Espaciado vertical opcional */
-}
-
-.container-1 a {
-    flex: 1;
-    text-align: center;
-    margin-top: 165px;
-}
-
 
 
 @media (max-width: 600px) {
@@ -612,12 +450,6 @@ body {
 }
 
 
- body {
-    width: 45px;
-    height: 50px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
 
 
 
@@ -635,3 +467,227 @@ body {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+
+
+.settings-v-1 .wrapper-4 {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    background: #AEAFF7;
+    position: relative;
+    margin-bottom: 6px;
+    margin-left: 10px;
+    display: flex;
+    padding: 15.1px 1.4px 14.2px 13.8px;
+    width: 60.1px;
+    height: 61px;
+    box-sizing: border-box;
+    top: 10px;
+
+    
+}
+
+.settings-v-1 .wrapper-5 {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    background: rgba(249, 219, 57, 0.84);
+    position: relative;
+    margin-bottom: 9.2px;
+    display: flex;
+    padding: 14.2px 13.5px 14.2px 13px;
+    width: 60.1px;
+    height: 61px;
+    box-sizing: border-box;
+    top: 10px;
+
+}
+
+.settings-v-1 .wrapper-6 {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    background: #4B8D8C;
+    position: relative;
+    margin: 0 8.8px 9.6px 0;
+    display: flex;
+    padding: 16px 13.5px 14.5px 12.7px;
+    width: 60.1px;
+    height: 61px;
+    box-sizing: border-box;
+    top: -8px;
+    right: -35px;
+
+
+}
+
+.settings-v-1 .wrapper-7 {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    background: #F05454;
+    position: relative;
+    margin-bottom: 9.6px;
+    display: flex;
+    padding: 15.1px 13.4px 14.2px 13.8px;
+    width: 60.1px;
+    height: 61px;
+    box-sizing: border-box;
+    top: -10px;
+    right: -10px;
+
+}
+
+.settings-v-1 .wrapper-8 {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    background: #8DCB9E;
+    position: relative;
+    margin-bottom: 9.6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15.1px 13.4px 14.2px 13.8px;
+    height: 61px;
+    width: 60.1px;
+    top: -30px;
+    right: 40px;
+    box-sizing: border-box;
+}
+
+.settings-v-1 {
+    display: flex;
+    flex-direction: row; /* Alinea los wrappers horizontalmente */
+    justify-content: -20px; /* Espacio entre las columnas */
+    width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
+}
+
+.wrapper-2, .wrapper-3 {
+    display: flex; /* Muestra los frames en una fila */
+    flex-direction: column; /* Organiza los frames verticalmente */
+    width: 90%; /* Cada wrapper ocupa aproximadamente la mitad del contenedor */
+    margin-bottom: 0px; /* Espacio entre las filas */
+}
+
+.settings-v-1 .frame-10,
+.settings-v-1 .frame-11,
+.settings-v-1 .frame-12,
+.settings-v-1 .frame-14 {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    background: #E1F8E8;
+    margin: 10px 0; /* Espacio entre los frames verticalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16.5px 0;
+    width: 75%; /* Ocupa el ancho completo del wrapper */
+    height: 200px;
+    
+    /* Elimina el subrayado de los enlaces */
+    text-decoration: none; 
+}
+
+/* Estilo específico para los enlaces dentro de los frames */
+.settings-v-1 .frame-10 a,
+.settings-v-1 .frame-11 a,
+.settings-v-1 .frame-12 a,
+.settings-v-1 .frame-14 a {
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: inherit; /* Asegura que el color del texto sea el mismo que el de su contenedor */
+}
+
+
+/* Estilo del botón de chat */
+.frame-13 {
+    display: flex;
+    flex-direction: column; /* Organiza el contenido verticalmente */
+    align-items: center; /* Centra el contenido */
+    margin-top: -150px; /* Espacio entre las columnas y el botón */
+    margin-right: -1100px; /* Ajustar según sea necesario */
+}
+
+/* Estilo específico para los enlaces dentro de frame-13 */
+.frame-13 a {
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: inherit; /* Asegura que el color del texto sea el mismo que el de su contenedor */
+}
+
+
+h1 {
+    text-align: center;
+    margin: 10px ; /* Ajusta el valor según sea necesario */
+    font-size: 2.5em;
+    color: #000000;
+    font-family: "Jomhuria", serif;}
+
+    
+    
+.imagen-superior {
+    width: 100%;
+    height: auto;
+    max-height: 100px; /* Ajusta la altura máxima según tus necesidades */
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .imagen-superior {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Ajusta según el tamaño necesario */
+    object-fit: cover; /* Para que la imagen cubra toda el área */
+    z-index: -1; /* Para que el contenido esté por encima */
+  }
+  
+  
+  .imagen-esquina {
+    width: 60px; /* Tamaño pequeño */
+    height: auto;
+    position: absolute;
+    top: 14px; /* Ajusta según sea necesario */
+  }
+  
+  .izquierda {
+    left: 100px; /* Esquina superior izquierda */
+  }
+  
+  .derecha {
+    right: 100px; /* Esquina superior derecha */
+  }
+  
+  
+  
+  .menu-container {
+    position: fixed;
+    top: 0px;
+    right: 10px;
+    z-index: 1000;
+    width: 60px;
+  }
+  
+  
+  
+  .menu-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .menu-dropdown a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .menu-dropdown a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .show {
+    display: block;
+  }

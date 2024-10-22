@@ -14,7 +14,7 @@ body {
 
 .container {
     width: 1280px;
-    height: 700px;
+    height: 735px;
     margin: 60px auto;
     padding: 30px;
     background-color: white;
@@ -24,7 +24,8 @@ body {
 
 /* Estilos del estado de ánimo */
 .how-are-you-feeling-today {
-    font-size: 35px;
+    font-size: 33px;
+    font-weight: bold;
     margin: 20px 0;
     text-align: center;
     color: #333;
@@ -68,8 +69,9 @@ body {
 .feliz, .calmado, .relajado, .enojado, .triste {
     text-align: center;
     margin-top: 8px;
-    font-size: 14px;
+    font-size: 16px;
     color: #333;
+    
 }
 
 /* Features grid */
@@ -83,7 +85,10 @@ body {
 .frame-10, .frame-11, .frame-12, .frame-14 {
     background: #E1F8E8;
     padding: 20px;
+    height: 180px;
     text-align: center;
+    font-size: 15px;
+    font-weight:bold ;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
@@ -159,7 +164,7 @@ h1 {
 /* Chat bot button */
 .frame-13 {
     position: fixed;
-    bottom: 30px;
+    bottom: 50px;
     right: 70px;
     background: white;
     border-radius: 50%;
@@ -169,6 +174,7 @@ h1 {
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    font-weight: bolder;
 }
 
 @media (max-width: 768px) {

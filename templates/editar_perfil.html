@@ -7,8 +7,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style24.css') }}">
 </head>
 <body>
+    <h1 class="titulo-centrado">SANAMED</h1>
+    <img src="static/rectangle 6.png" alt="Imagen Superior" class="imagen-superior">
+    <img src="static/saludmental1.png" alt="Imagen Esquina Izquierda" class="imagen-esquina izquierda">
+    
+
     <div class="container">
-        <h1>Editar Perfil</h1>
+        <h1 title="Editar perfil">Editar perfil</h1>
         <div class="appointment-form">
             <form action="{{ url_for('editar_perfil') }}" method="post">
                 {% with messages = get_flashed_messages() %}

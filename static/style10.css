@@ -1,43 +1,52 @@
 /* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
+body {
+    font-family: Arial, sans-serif;
+    background: url("fondoproyecto.png") no-repeat center center fixed;
+    background-size: cover;
+    line-height: 1.6;
+}
+
 
 /* Estilos para el contenedor principal */
 .container {
-    width: 340px;
-    margin: 100px auto;
+    width: 1280px;
     height: 760px;
-    background-color: #fff;
-    padding: 50px;
-    border-radius: 5px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    font-family: "Releway", sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin: 10px;
+    font-size: 2.5em;
     color: #000000;
-    font-size: 23px;
-    position: relative;
-}
-.container h1 {
-    color: #8DCB9E; /* Color del texto dentro del contenedor */
+    font-family: "Jomhuria", serif;
 }
 
 
+
+/* Contenedor para hacer la tabla escroleable */
 .appointment-form {
-    max-width: 500px;
+    max-width: 1000px;
     margin: auto;
-    height: 420px;
+    height: 500px;
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 10px;
-    margin-top: 20px;
-    overflow: auto; /* Agrega una barra de desplazamiento si el contenido excede el tamaño del contenedor */
+    margin-top: 2px;
+    
+    overflow-y: auto;  /* Habilita el scroll vertical si hay muchas entradas */
 }
-
-
-
 
 .appointment-form table {
     width: 100%; /* Asegura que la tabla ocupe todo el ancho del formulario */
@@ -55,55 +64,3 @@ body {
     text-align: center; /* Alinea el texto a la izquierda */
 }
 
-
-form {
-    display: inline;
-}
-
-.styled-input {
-    width: calc(100% - 20px);
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    font-size: 16px;
-}
-
-.styled-button {
-    padding: 10px 20px;
-    background-color: #8DCB9E;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: -10px;
-}
-
-.styled-button:hover {
-    background-color: green;
-}
-.container-1 {
-    display: flex;
-    justify-content: center;
-    gap: 100px; /* Ajusta la separación entre iconos según sea necesario */
-    margin-top: -1px;
-}
-
-.config, .casa, .download-20 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.config img, .casa img, .download-20 img {
-    width: 45px;
-    height: 50px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    margin-top: 110px;
-}
-
-.config img:hover, .casa img:hover, .download-20 img:hover {
-    transform: scale(1.1);
-}

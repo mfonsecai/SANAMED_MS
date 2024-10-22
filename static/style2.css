@@ -160,7 +160,7 @@ h1 {
 .frame-13 {
     position: fixed;
     bottom: 30px;
-    right: 30px;
+    right: 70px;
     background: white;
     border-radius: 50%;
     width: 60px;
@@ -192,3 +192,10 @@ h1 {
         height: 30px;
     }
 }
+
+a {
+    text-decoration: none; /* Quitar subrayado en todos los enlaces */
+    color: #000000;
+}
+
+ 

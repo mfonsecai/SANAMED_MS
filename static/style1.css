@@ -71,15 +71,14 @@ select::placeholder {
     background-color: green;
 }
 
-.register-link {
-    margin-top: 20px;
-    color: #8DCB9E;
-}
-
 .register-link a {
     color: green;
-    text-decoration: none;
+    text-decoration: none; 
     font-weight: bold;
+}
+
+a {
+    text-decoration: none;
 }
 
 .alert {

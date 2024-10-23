@@ -117,7 +117,7 @@ h1 {
   }
   
   .menu-container {
-    position: fixed;
+    position: absolute;
     top: 0px;
     right: 10px;
     z-index: 1000;

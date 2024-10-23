@@ -254,20 +254,7 @@ def games():
 def obtener_juegos():
     return jsonify({"juegos": juegos}), 200
 
-@app.route('/rompecabezas')
-def rompecabezas():
-    return render_template('rompecabezas.html')
 
-
-@app.route('/laberinto')
-def laberinto():
-    return render_template('laberinto.html')
-
-
-
-
-# Función para obtener un ID de profesional aleatorio
-# Función para obtener profesionales disponibles
 def obtener_profesionales_disponibles():
     cur = mysql.connection.cursor()
     cur.execute("SELECT id_profesional, nombre, especialidad FROM Profesionales")

@@ -7,7 +7,6 @@ body {
     color: #333;
     line-height: 1.6;
   }
-  
 
 h1, h2 {    
     color: #8DCB9E;
@@ -126,27 +125,24 @@ img {
 
 
 .imagen-superior {
-    width: 1000px;
-    height: 1000px;
+    width: 100%;
+    height: auto;
     max-width: 2000px;
     max-height: 100px; /* Ajusta la altura máxima según tus necesidades */
     display: block;
     margin: 0 auto;
+    object-fit: cover;
+
   }
   
   .imagen-superior {
-    position: fixed; /* Posiciona la imagen en la parte superior */
+    position: absolute; /* Posiciona la imagen en la parte superior */
     top: 0;
     left: 0;
-    width: 100000px; /* Hace que ocupe todo el ancho de la pantalla */
-    height: auto; /* Ajusta la altura proporcionalmente */
     z-index: -1; /* Coloca la imagen detrás de otros elementos */
 }
 
-.imagen-superior {
-    height: 100vh;
-    object-fit: cover; /* Ajusta la imagen para cubrir todo el contenedor sin deformarse */
-}
+
 
   
   .imagen-esquina {
@@ -167,7 +163,7 @@ img {
   
   
   .menu-container {
-    position: fixed;
+    position: absolute;
     top: 0px;
     right: 10px;
     z-index: 1000;
@@ -178,7 +174,7 @@ img {
   
   .menu-dropdown {
     display: none;
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 60px;
     background-color: #f9f9f9;

@@ -1,7 +1,8 @@
 import re
-from datetime import datetime,date
+from datetime import datetime,date, timedelta
 from flask import Flask, render_template, request, session, redirect, url_for, jsonify,flash
 from flask_mysqldb import MySQL
+from functools import wraps
 
 import random
 
@@ -63,6 +64,7 @@ def login():
         rol = request.form['rol']
        
         cur = mysql.connection.cursor()
+        
        
         # Buscar en la tabla de usuarios
         cur.execute("SELECT id_usuario FROM Usuarios WHERE correo = %s AND contrasena = %s AND tipo_perfil = %s", (username, password, rol))
@@ -84,8 +86,8 @@ def login():
 
         if user_data:
             session['logged_in'] = True
-            session['id_usuario'] = user_data[0]  # Establecer el ID de usuario en la sesión
-
+            session['id_usuario'] = user_data[0]
+            session['last_activity'] = datetime.now().isoformat()  # Agregar timestamp
 
             if rol == 'usuario':
                 return redirect(url_for('user_home'))
@@ -96,39 +98,8 @@ def login():
         else:
             return render_template('index.html', error="Credenciales incorrectas")
 
-
     return render_template('index.html')
 
-
-@app.route('/registro_emocion', methods=['POST'])
-def registro_emocion():
-    if 'logged_in' in session and session['logged_in']:
-        if request.method == 'POST':
-            # Obtener la emoción seleccionada por el usuario
-            emocion = request.form['emocion']
-
-
-            # Obtener el ID del usuario actualmente logueado
-            print("Contenido de la sesión:", session)  # Agregar esta impresión
-            id_usuario = obtener_id_usuario_actual()
-
-
-            # Obtener la fecha y hora actual
-            fecha_emocion = datetime.now()
-
-
-            # Insertar la emoción en la base de datos
-            cur = mysql.connection.cursor()
-            cur.execute("INSERT INTO Emociones (id_usuario, fecha_emocion, emocion) VALUES (%s, %s, %s)",
-                        (id_usuario, fecha_emocion, emocion))
-            mysql.connection.commit()
-            cur.close()
-
-
-            # Redirigir al usuario de nuevo a la página de inicio
-            return redirect(url_for('user_home'))
-    else:
-        return redirect(url_for('index'))
    
    
 @app.route('/signup', methods=["GET", 'POST'])
@@ -182,7 +153,76 @@ def register():
     return render_template('register.html')
 
 
+# Decorator para proteger rutas
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        # Verificar si el usuario está logueado
+        if not session.get('logged_in'):
+            flash('Por favor inicie sesión para acceder a esta página', 'error')
+            return redirect(url_for('index'))
+        
+        # Verificar si la sesión ha expirado
+        if 'last_activity' in session:
+            last_activity = datetime.fromisoformat(session['last_activity'])
+            if datetime.now() - last_activity > timedelta(minutes=30):  # 30 minutos de timeout
+                session.clear()
+                flash('Su sesión ha expirado. Por favor inicie sesión nuevamente', 'error')
+                return redirect(url_for('index'))
+        
+        # Actualizar timestamp de última actividad
+        session['last_activity'] = datetime.now().isoformat()
+        return f(*args, **kwargs)
+    return decorated_function
+
+# Agregar la ruta de logout
+@app.route('/logout')
+def logout():
+    # Limpiar toda la sesión
+    session.clear()
+    #flash('Ha cerrado sesión exitosamente', 'success')
+    # Agregar headers para prevenir el cache
+    response = redirect(url_for('index'))
+    response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate'
+    response.headers['Pragma'] = 'no-cache'
+    response.headers['Expires'] = '0'
+    return response
+
+
+
+@app.route('/registro_emocion', methods=['POST'])
+@login_required
+def registro_emocion():
+    if 'logged_in' in session and session['logged_in']:
+        if request.method == 'POST':
+            # Obtener la emoción seleccionada por el usuario
+            emocion = request.form['emocion']
+
+
+            # Obtener el ID del usuario actualmente logueado
+            print("Contenido de la sesión:", session)  # Agregar esta impresión
+            id_usuario = obtener_id_usuario_actual()
+
+
+            # Obtener la fecha y hora actual
+            fecha_emocion = datetime.now()
+
+
+            # Insertar la emoción en la base de datos
+            cur = mysql.connection.cursor()
+            cur.execute("INSERT INTO Emociones (id_usuario, fecha_emocion, emocion) VALUES (%s, %s, %s)",
+                        (id_usuario, fecha_emocion, emocion))
+            mysql.connection.commit()
+            cur.close()
+
+
+            # Redirigir al usuario de nuevo a la página de inicio
+            return redirect(url_for('user_home'))
+    else:
+        return redirect(url_for('index'))
+    
 @app.route('/user_home')
+@login_required
 def user_home():
     if 'logged_in' in session and session['logged_in']:
         # Aquí renderizas el home del usuario
@@ -192,6 +232,7 @@ def user_home():
 
 
 @app.route('/admin_home')
+@login_required
 def admin_home():
     if 'logged_in' in session and session['logged_in']:
         # Aquí renderizas el home del usuario
@@ -200,6 +241,7 @@ def admin_home():
         return redirect(url_for('index'))
    
 @app.route('/profesional_home')
+@login_required
 def profesional_home():
     if 'logged_in' in session and session['logged_in']:
         # Aquí renderizas el home del usuario
@@ -247,6 +289,7 @@ juegos = [
 ]
 
 @app.route('/games')
+@login_required
 def games():
     return render_template('games.html')
 
@@ -254,7 +297,20 @@ def games():
 def obtener_juegos():
     return jsonify({"juegos": juegos}), 200
 
+@app.route('/rompecabezas')
+def rompecabezas():
+    return render_template('rompecabezas.html')
 
+
+@app.route('/laberinto')
+def laberinto():
+    return render_template('laberinto.html')
+
+
+
+
+# Función para obtener un ID de profesional aleatorio
+# Función para obtener profesionales disponibles
 def obtener_profesionales_disponibles():
     cur = mysql.connection.cursor()
     cur.execute("SELECT id_profesional, nombre, especialidad FROM Profesionales")
@@ -264,6 +320,7 @@ def obtener_profesionales_disponibles():
 
 
 @app.route('/agendar_cita', methods=["GET", "POST"])
+@login_required
 def agendar_cita():
     if 'logged_in' in session and session['logged_in']:
         if request.method == "POST":
@@ -333,6 +390,7 @@ def agendar_cita():
 
     return render_template('agendar_cita.html', profesionales=obtener_profesionales_disponibles())
 @app.route('/calendario')
+@login_required
 def mostrar_calendario():
     # Aquí debes implementar la lógica para mostrar el calendario
     return render_template('calendario.html')
@@ -376,6 +434,7 @@ def obtener_nombre_profesional(id_profesional):
     cur.close()
     return nombre_profesional
 @app.route('/seleccionar_dia', methods=['POST'])
+@login_required
 def seleccionar_dia():
     if request.method == 'POST':
         fecha_seleccionada = request.form['fecha']
@@ -387,6 +446,7 @@ def seleccionar_dia():
 
 
 @app.route('/consultas_dia', methods=["GET", 'POST'])
+@login_required
 def consultas_dia():
     if request.method == 'POST':
         fecha_seleccionada = request.form['fecha']
@@ -396,6 +456,7 @@ def consultas_dia():
             return render_template('calendario.html', mensaje=mensaje)
         return render_template('consultas.html', fecha_seleccionada=fecha_seleccionada, consultas=consultas, obtener_nombre_profesional=obtener_nombre_profesional, obtener_especialidad_profesional=obtener_especialidad_profesional)
 @app.route('/profesionales')
+@login_required
 def listar_profesionales():
     cur = mysql.connection.cursor()
     cur.execute("SELECT id_profesional, nombre, especialidad FROM Profesionales")
@@ -405,6 +466,7 @@ def listar_profesionales():
 
 
 @app.route('/agregar_profesional', methods=["GET", "POST"])
+@login_required
 def agregar_profesional():
     if request.method == "POST":
         nombre = request.form['nombre']
@@ -435,6 +497,7 @@ def agregar_profesional():
 
 
 @app.route('/eliminar_profesional/<int:id>', methods=["POST"])
+@login_required
 def eliminar_profesional(id):
     cur = mysql.connection.cursor()
     try:
@@ -453,6 +516,7 @@ def eliminar_profesional(id):
 
 
 @app.route('/usuarios')
+@login_required
 def listar_usuarios():
     cur = mysql.connection.cursor()
     cur.execute("SELECT id_usuario, numero_documento, correo FROM Usuarios")
@@ -460,6 +524,7 @@ def listar_usuarios():
     cur.close()
     return render_template('lista_usuarios.html', usuarios=usuarios)  # Cambio de la plantilla a lista_usuarios.html
 @app.route('/eliminar_usuario/<int:id>', methods=["POST"])
+@login_required
 def eliminar_usuario(id):
     cur = mysql.connection.cursor()
     try:
@@ -476,6 +541,7 @@ def eliminar_usuario(id):
 
 
 @app.route('/citas_agendadas')
+@login_required
 def listar_citas():
     cur = mysql.connection.cursor()
    
@@ -501,6 +567,7 @@ def listar_citas():
    
     return render_template('lista_consultas.html', citas=citas)
 @app.route('/eliminar_cita/<int:id>', methods=['POST'])
+@login_required
 def eliminar_cita(id):
     cur = mysql.connection.cursor()
     cur.execute("DELETE FROM Consultas WHERE id_consulta = %s", (id,))
@@ -514,6 +581,7 @@ def eliminar_cita(id):
 
 
 @app.route('/pacientes')
+@login_required
 def pacientes():
     if 'logged_in' in session and session['logged_in']:
         id_profesional = obtener_id_usuario_actual()
@@ -563,6 +631,7 @@ class Consulta:
         self.diagnostico = diagnostico
         self.tratamiento = tratamiento
 @app.route('/diagnosticos_tratamientos', methods=['GET', 'POST'])
+@login_required
 def diagnosticos_tratamientos():
     if 'logged_in' in session and session['logged_in']:
         id_profesional = obtener_id_usuario_actual()  # Obtener el ID del profesional logueado
@@ -593,6 +662,7 @@ def diagnosticos_tratamientos():
     else:
         return redirect(url_for('index'))
 @app.route('/editar_diagnostico_tratamiento/<int:id_consulta>', methods=['POST'])
+@login_required
 def editar_diagnostico_tratamiento(id_consulta):
     diagnostico = request.form['diagnostico']
     tratamiento = request.form['tratamiento']
@@ -611,9 +681,12 @@ def editar_diagnostico_tratamiento(id_consulta):
 
 
 @app.route('/configuracion')
+@login_required
+
 def configuracion():
     return render_template('configuracion.html')
 @app.route('/editar_perfil', methods=['GET', 'POST'])
+@login_required
 def editar_perfil():
     if 'logged_in' in session and session['logged_in']:
         id_usuario = obtener_id_usuario_actual()
@@ -646,14 +719,23 @@ def editar_perfil():
 
 
 @app.route('/sobre_nosotros')
+@login_required
 def sobre_nosotros():
     return render_template('sobre_nosotros.html')
 
 
 @app.route('/preguntas_frecuentes')
+@login_required
 def preguntas_frecuentes():
     return render_template('preguntas_frecuentes.html')
 
+@app.after_request
+def add_header(response):
+    # Prevenir cache en todas las respuestas
+    response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate'
+    response.headers['Pragma'] = 'no-cache'
+    response.headers['Expires'] = '0'
+    return response
 
 if __name__ == '__main__':
     app.secret_key = "sanamed"

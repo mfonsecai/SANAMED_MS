@@ -123,17 +123,21 @@ img {
 
 
 
-
 .imagen-superior {
-    width: 100%;
-    height: auto;
-    max-width: 2000px;
-    max-height: 100px; /* Ajusta la altura máxima según tus necesidades */
-    display: block;
-    margin: 0 auto;
-    object-fit: cover;
+  width: 100%;          /* Ocupará el 100% del ancho del contenedor */
+  height: auto;        /* La altura se ajustará automáticamente para mantener la relación de aspecto */
+  max-width: 3000px;   /* Ancho máximo de la imagen */
+  max-height: 100px;   /* Altura máxima de la imagen */
+  display: block;      /* Eliminar el espacio en línea de la imagen */
+  margin: 0 auto;      /* Centrar la imagen en su contenedor */
+  object-fit: cover;   /* La imagen cubrirá completamente el área especificada */
+  position: relative;   /* Para la colocación adecuada si se necesita */
+  top: 0;               /* Alinea la imagen en la parte superior del contenedor */
+  left: 0;              /* Alinea la imagen a la izquierda del contenedor */
+  z-index: 1;          /* Asegúrate de que la imagen esté en el frente si hay otros elementos */
+}
 
-  }
+  
   
   .imagen-superior {
     position: absolute; /* Posiciona la imagen en la parte superior */

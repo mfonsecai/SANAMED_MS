@@ -6,7 +6,7 @@ body {
     background-size: cover;
     color: #333;
     line-height: 1.6;
-  }
+}
 
 h1, h2 {    
     color: #8DCB9E;
@@ -14,11 +14,12 @@ h1, h2 {
 
 h1 {
     text-align: center;
-    margin: 10px ; /* Ajusta el valor según sea necesario */
+    margin: 10px; /* Ajusta el valor según sea necesario */
     font-size: 2.5em;
     color: #000000;
-    font-family: "Jomhuria", serif;}
-  
+    font-family: "Jomhuria", serif;
+}
+
 h2 {
     font-size: 46px;
     margin-bottom: 20px;
@@ -121,62 +122,51 @@ img {
     }
 }
 
-
-
 .imagen-superior {
-  width: 100%;          /* Ocupará el 100% del ancho del contenedor */
-  height: auto;        /* La altura se ajustará automáticamente para mantener la relación de aspecto */
-  max-width: 3000px;   /* Ancho máximo de la imagen */
-  max-height: 100px;   /* Altura máxima de la imagen */
-  display: block;      /* Eliminar el espacio en línea de la imagen */
-  margin: 0 auto;      /* Centrar la imagen en su contenedor */
-  object-fit: cover;   /* La imagen cubrirá completamente el área especificada */
-  position: relative;   /* Para la colocación adecuada si se necesita */
-  top: 0;               /* Alinea la imagen en la parte superior del contenedor */
-  left: 0;              /* Alinea la imagen a la izquierda del contenedor */
-  z-index: 1;          /* Asegúrate de que la imagen esté en el frente si hay otros elementos */
-}
-
-  
-  
-  .imagen-superior {
-    position: absolute; /* Posiciona la imagen en la parte superior */
+    width: 100%;
+    height: auto;
+    max-width: 3000px;
+    max-height: 100px;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    position: relative;
     top: 0;
     left: 0;
-    z-index: -1; /* Coloca la imagen detrás de otros elementos */
+    z-index: 1;
 }
 
+.imagen-superior {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
 
-
-  
-  .imagen-esquina {
-    width: 60px; /* Tamaño pequeño */
+.imagen-esquina {
+    width: 60px;
     height: auto;
     position: absolute;
-    top: 14px; /* Ajusta según sea necesario */
-  }
-  
-  .izquierda {
-    left: 100px; /* Esquina superior izquierda */
-  }
-  
-  .derecha {
-    right: 100px; /* Esquina superior derecha */
-  }
-  
-  
-  
-  .menu-container {
+    top: 14px;
+}
+
+.izquierda {
+    left: 100px;
+}
+
+.derecha {
+    right: 100px;
+}
+
+.menu-container {
     position: absolute;
     top: 0px;
     right: 10px;
     z-index: 1000;
     width: 60px;
-  }
-  
-  
-  
-  .menu-dropdown {
+}
+
+.menu-dropdown {
     display: none;
     position: fixed;
     right: 0;
@@ -185,19 +175,78 @@ img {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-  }
-  
-  .menu-dropdown a {
+}
+
+.menu-dropdown a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-  }
-  
-  .menu-dropdown a:hover {
+}
+
+.menu-dropdown a:hover {
     background-color: #f1f1f1;
-  }
-  
-  .show {
+}
+
+.show {
     display: block;
-  }
+}
+
+/* Media Queries para hacer el diseño responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 36px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    button,
+    select {
+        width: 100%; /* Asegura que los inputs y botones ocupen el 100% del ancho en pantallas pequeñas */
+    }
+
+    .container {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .imagen-esquina.izquierda,
+    .imagen-esquina.derecha {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        width: 40px; /* Ajustar tamaño de imágenes en esquinas para pantallas pequeñas */
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.4em;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .container {
+        padding: 10px;
+        margin: 10px auto;
+    }
+
+    .imagen-superior {
+        max-height: 60px;
+    }
+
+    .imagen-esquina.izquierda,
+    .imagen-esquina.derecha {
+        width: 30px;
+    }
+}

@@ -418,10 +418,11 @@ def obtener_especialidad_profesional(id_profesional):
     return especialidad_profesional
 
 
-def obtener_consultas_por_fecha(fecha):
+
+def obtener_consultas_por_usuario(id_usuario):
     cur = mysql.connection.cursor()
-    query = "SELECT id_usuario, id_profesional, fecha_consulta, hora_consulta, motivo FROM Consultas WHERE DATE(fecha_consulta) = %s"
-    cur.execute(query, (fecha,))
+    query = "SELECT id_usuario, id_profesional, fecha_consulta, hora_consulta, motivo FROM Consultas WHERE id_usuario = %s"
+    cur.execute(query, (id_usuario,))
     consultas = cur.fetchall()
     cur.close()
     return consultas
@@ -444,17 +445,22 @@ def seleccionar_dia():
             return render_template('calendario.html', mensaje=mensaje)
         return render_template('emociones.html', fecha_seleccionada=fecha_seleccionada, emociones_horas=zip(emociones, horas))
 
-
 @app.route('/consultas_dia', methods=["GET", 'POST'])
 @login_required
 def consultas_dia():
-    if request.method == 'POST':
-        fecha_seleccionada = request.form['fecha']
-        consultas = obtener_consultas_por_fecha(fecha_seleccionada)
-        if not consultas:
-            mensaje = "No hay citas registradas para este día."
-            return render_template('calendario.html', mensaje=mensaje)
-        return render_template('consultas.html', fecha_seleccionada=fecha_seleccionada, consultas=consultas, obtener_nombre_profesional=obtener_nombre_profesional, obtener_especialidad_profesional=obtener_especialidad_profesional)
+    
+    # Obtener el ID del usuario que está logueado (suponiendo que tienes una función para obtener el usuario actual)
+    id_usuario = obtener_id_usuario_actual()
+
+    # Obtener todas las consultas programadas para este usuario
+    consultas = obtener_consultas_por_usuario(id_usuario)
+
+    if not consultas:
+        mensaje = "No tienes citas programadas."
+        return render_template('consultas.html', mensaje=mensaje)
+
+    return render_template('consultas.html', fecha_seleccionada="Todas tus citas", consultas=consultas, obtener_nombre_profesional=obtener_nombre_profesional, obtener_especialidad_profesional=obtener_especialidad_profesional)
+
 @app.route('/profesionales')
 @login_required
 def listar_profesionales():

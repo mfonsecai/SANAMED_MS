@@ -581,13 +581,11 @@ def eliminar_cita(id):
     mysql.connection.commit()
     cur.close()
    
-    session['aviso_mostrado'] = True
-    
-    # Flash del mensaje
-    if 'aviso_mostrado' not in session:
-        flash('Consulta eliminada correctamente.')
-        session['aviso_mostrado'] = True  # Marcar que el mensaje fue mostrado
-    return render_template ('lista_consultas.html')
+    # Emitir un mensaje flash después de eliminar la cita con éxito
+    flash('La cita ha sido eliminada correctamente.', 'success')
+   
+    return redirect(url_for('listar_citas'))
+
 @app.route('/eliminar_consulta/<int:id>', methods=['POST'])
 @login_required
 def eliminar_consulta(id):
@@ -596,11 +594,12 @@ def eliminar_consulta(id):
     mysql.connection.commit()
     cur.close()
    
-    if 'aviso_mostrado' not in session:
-        flash('Consulta eliminada correctamente.')
-        session['aviso_mostrado'] = True  # Marcar que el mensaje fue mostrado
+    session['aviso_mostrado'] = True
+    
+    # Flash del mensaje
+    flash('Consulta eliminada correctamente.')
    
-    return render_template('consultas.html')
+    return redirect(url_for('consultas_dia'))
 
 
 @app.route('/pacientes')

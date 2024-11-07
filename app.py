@@ -587,7 +587,7 @@ def eliminar_cita(id):
     if 'aviso_mostrado' not in session:
         flash('Consulta eliminada correctamente.')
         session['aviso_mostrado'] = True  # Marcar que el mensaje fue mostrado
-
+    return render_template ('lista_consultas.html')
 @app.route('/eliminar_consulta/<int:id>', methods=['POST'])
 @login_required
 def eliminar_consulta(id):

@@ -579,11 +579,13 @@ def eliminar_cita(id):
     cur.execute("DELETE FROM Consultas WHERE id_consulta = %s", (id,))
     mysql.connection.commit()
     cur.close()
-   
+
     # Emitir un mensaje flash después de eliminar la cita con éxito
     flash('La cita ha sido eliminada correctamente.', 'success')
-   
-    return redirect(url_for('listar_citas'))
+
+    # Redirigir de nuevo a la lista de consultas
+    return redirect(url_for('consultas_dia'))
+
 
 
 @app.route('/pacientes')

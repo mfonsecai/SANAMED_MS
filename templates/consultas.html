@@ -7,7 +7,6 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='saludmental1.ico ') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style10.css') }}">
     <style>
-        /* Estilo para el cuadro de confirmación */
         .confirmation-dialog {
             display: none;
             position: fixed;
@@ -19,6 +18,11 @@
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
             z-index: 9999;
+        }
+        .flash-message {
+            color: green;
+            font-weight: bold;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -38,22 +42,29 @@
     </div>
 
     <div class="container">
-        <h1 class="titulo-principal" title="Tus citas programadas">Tus citas programadas</h1>
+        <h1>Tus citas programadas</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash-message">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
         <div class="appointment-form">
             <div class="consultas" title="Lista de consultas">
                 {% if consultas %}
                     <table class="table">
-                        <thead>
-                            <tr>
-                                <th class="blue-title">Fecha</th>
-                                <th class="green-title">Hora</th>
-                                <th class="red-title">Nombre Profesional</th>
-                                <th class="purple-title">Especialidad</th>
-                                <th class="orange-title">Motivo</th>
-                                <th class="action-title">Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                        
+                        <tr>
+                                <th>Fecha</th>
+                                <th>Hora</th>
+                                <th>Nombre Profesional</th>
+                                <th>Especialidad</th>
+                                <th>Motivo</th>
+                                <th>Acciones</th>
+                        </tr>
+                        
+                        <tr>
                             {% for consulta in consultas %}
                                 <tr class="result-row">
                                     <td>{{ consulta[2] }}</td> <!-- Fecha -->
@@ -63,13 +74,13 @@
                                     <td>{{ consulta[4] }}</td> <!-- Motivo -->
                                     <td>
                                         <!-- Formulario para eliminar -->
-                                        <form id="eliminarForm{{ consulta[0] }}" action="{{ url_for('eliminar_cita', id=consulta[0]) }}" method="post">
+                                        <form id="eliminarForm{{ consulta[0] }}" action="{{ url_for('eliminar_consulta', id=consulta[0]) }}" method="post">
                                             <button type="button" onclick="showConfirmationDialog('{{ consulta[0] }}')">Eliminar</button>
                                         </form>
                                     </td>
                                 </tr>
                             {% endfor %}
-                        </tbody>
+                        </tr>
                     </table>
                 {% else %}
                     <p>{{ mensaje }}</p>
@@ -81,31 +92,53 @@
     <!-- Diálogo de confirmación -->
     <div id="confirmationDialog" class="confirmation-dialog">
         <p>¿Está seguro de que desea eliminar esta cita?</p>
-        <button onclick="cancelDelete()">Cancelar</button>
-        <button onclick="confirmDelete()">Aceptar</button>
+        <button onclick="cancelDelete()" class="form-submit">Cancelar</button>
+        <button onclick="confirmDelete()" class="form-submit">Aceptar</button>
     </div>
 
     <script>
         var appointmentIdToDelete;
 
-        // Mostrar el cuadro de confirmación
         function showConfirmationDialog(appointmentId) {
             appointmentIdToDelete = appointmentId;
             document.getElementById('confirmationDialog').style.display = 'block';
         }
 
-        // Confirmar la eliminación
         function confirmDelete() {
             document.getElementById('confirmationDialog').style.display = 'none';
+            // Obtener el ID del formulario a enviar
             var formId = 'eliminarForm' + appointmentIdToDelete;
+            // Enviar el formulario
             document.getElementById(formId).submit();
         }
 
-        // Cancelar la eliminación
         function cancelDelete() {
             document.getElementById('confirmationDialog').style.display = 'none';
         }
     </script>
 
+    <script>
+        //menu
+            
+                document.addEventListener('DOMContentLoaded', function() {
+                    var menuToggle = document.getElementById('menu-toggle');
+                    var menuDropdown = document.getElementById('menu-dropdown');
+                
+                    menuToggle.addEventListener('click', function() {
+                        menuDropdown.classList.toggle('show');
+                    });
+                
+                    // Cerrar el menú si se hace clic fuera de él
+                    window.addEventListener('click', function(event) {
+                        if (!event.target.matches('.imagen-esquina')) {
+                            if (menuDropdown.classList.contains('show')) {
+                                menuDropdown.classList.remove('show');
+                            }
+                        }
+                    });
+                });
+    
+            
+        </script>
 </body>
 </html>

@@ -449,6 +449,7 @@ def seleccionar_dia():
 @login_required
 def consultas_dia():
     
+    
     # Obtener el ID del usuario que está logueado (suponiendo que tienes una función para obtener el usuario actual)
     id_usuario = obtener_id_usuario_actual()
 
@@ -579,13 +580,27 @@ def eliminar_cita(id):
     cur.execute("DELETE FROM Consultas WHERE id_consulta = %s", (id,))
     mysql.connection.commit()
     cur.close()
+   
+    session['aviso_mostrado'] = True
+    
+    # Flash del mensaje
+    if 'aviso_mostrado' not in session:
+        flash('Consulta eliminada correctamente.')
+        session['aviso_mostrado'] = True  # Marcar que el mensaje fue mostrado
 
-    # Emitir un mensaje flash después de eliminar la cita con éxito
-    flash('La cita ha sido eliminada correctamente.', 'success')
-
-    # Redirigir de nuevo a la lista de consultas
-    return redirect(url_for('consultas_dia'))
-
+@app.route('/eliminar_consulta/<int:id>', methods=['POST'])
+@login_required
+def eliminar_consulta(id):
+    cur = mysql.connection.cursor()
+    cur.execute("DELETE FROM Consultas WHERE id_usuario = %s", (id,))
+    mysql.connection.commit()
+    cur.close()
+   
+    if 'aviso_mostrado' not in session:
+        flash('Consulta eliminada correctamente.')
+        session['aviso_mostrado'] = True  # Marcar que el mensaje fue mostrado
+   
+    return render_template('consultas.html')
 
 
 @app.route('/pacientes')

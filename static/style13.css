@@ -86,7 +86,24 @@ form {
 }
 
     
-  
+button {
+    margin-top: 20px;
+    width: 300px;
+    height: 60px;
+    background-color: #8DCB9E;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: darkgreen;
+}
   
 
   

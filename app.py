@@ -759,33 +759,44 @@ def configuracion():
 @app.route('/editar_perfil', methods=['GET', 'POST'])
 @login_required
 def editar_perfil():
+    # Verificar si el usuario está logueado y la sesión es válida
     if 'logged_in' in session and session['logged_in']:
+        # Obtener el id del usuario desde la sesión
         id_usuario = obtener_id_usuario_actual()
+        
+        # Conexión a la base de datos
         cur = mysql.connection.cursor()
 
-
+        # Si el método de la solicitud es POST, significa que el usuario está enviando datos para actualizar su perfil
         if request.method == 'POST':
             nombre = request.form['nombre']
             numero_documento = request.form['numero_documento']
             celular = request.form['celular']
             correo = request.form['correo']
 
-
+            # Actualizar los datos del usuario en la base de datos usando el ID del usuario autenticado
             cur.execute("""
                 UPDATE Usuarios
                 SET nombre = %s, numero_documento = %s, celular = %s, correo = %s
                 WHERE id_usuario = %s
             """, (nombre, numero_documento, celular, correo, id_usuario))
+            
+            # Confirmar cambios en la base de datos
             mysql.connection.commit()
             cur.close()
+            
+            # Redirigir a la página de configuración después de guardar cambios
             return redirect(url_for('configuracion'))
 
-
+        # Si el método es GET, obtener los datos actuales del usuario desde la base de datos
         cur.execute("SELECT nombre, numero_documento, celular, correo FROM Usuarios WHERE id_usuario = %s", (id_usuario,))
         usuario = cur.fetchone()
         cur.close()
+
+        # Renderizar la plantilla de editar perfil con los datos del usuario autenticado
         return render_template('editar_perfil.html', usuario=usuario)
     else:
+        # Si no está logueado, redirigir al inicio de sesión
         return redirect(url_for('index'))
 
 
